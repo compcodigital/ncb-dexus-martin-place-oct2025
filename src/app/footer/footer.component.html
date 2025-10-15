@@ -1,0 +1,152 @@
+<section class="footer py-4" *ngIf="this.campaignCenterService.showFooter">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-9 footer-text" style="font-size: 11px">
+        *<a
+          (click)="openModal(terms)"
+          data-target="#terms"
+          class="footer-tnc-link"
+          >T&C’s apply</a
+        >: Only one e-Gift Card per person can be claimed each week during the
+        promotional period. Promotional Period: Monday 20 - Friday 24 October,
+        and Monday 27 - Friday 31 October 2025. Receipts must be dated same day
+        as competition entry. Limited e-Gift Cards available each day, only
+        while stocks last. Go to
+        <a
+          href="https://quayquartersydney.com.au"
+          target="_blank"
+          rel="noopener noreferrer"
+          >quayquartersydney.com.au</a
+        >
+        for more info.
+      </div>
+      <div class="col-12 col-md-3 mt-3 mt-md-0">
+        <img src="../../assets/img/logo.png" class="img-fluid footer-logo-1" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #terms>
+  <div class="modal-header tc">
+    <div class="row">
+      <div class="col-12 text-center modal-adj-head">
+        <div class="mt-3 mt-md-2">
+          <strong>COMPETITION TERMS & CONDITIONS</strong>
+        </div>
+        <!-- <div class="mt-2 mb-md-2">
+          <strong>TERMS AND CONDITIONS</strong>
+        </div> -->
+      </div>
+    </div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-terms></app-terms>
+  </div>
+</ng-template>
+
+<ng-template #participating>
+  <div class="modal-header">
+    <div class="title-participating">PARTICIPATING RETAILERS</div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="body-participating">
+      <div
+        class="row"
+        *ngFor="let centers of this.campaignCenterService.centers"
+      >
+        <div class="col-6" *ngFor="let retailers of centers.retailers">
+          {{ retailers.name }}
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="mr-btm">
+            <strong>New South Wales</strong>
+            <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+              <a href="{{ Lscenters.website }}" target="_blank">
+                <div *ngIf="Lscenters.state === 'NSW'">{{ Lscenters.name }}</div>
+              </a>
+            </div>
+          </div>
+          <div class="mr-btm">
+            <strong>Queensland</strong>
+            <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+              <a href="{{ Lscenters.website }}" target="_blank">
+                <div *ngIf="Lscenters.state === 'QLD'">{{ Lscenters.name }}</div>
+              </a>
+            </div>
+          </div>
+          <div class="mr-btm">
+            <strong>South Australia</strong>
+            <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+              <a href="{{ Lscenters.website }}" target="_blank">
+                <div *ngIf="Lscenters.state === 'SA'">{{ Lscenters.name }}</div>
+              </a>
+            </div>
+          </div>
+          <div class="mr-btm">
+            <strong>Tasmania</strong>
+            <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+              <a href="{{ Lscenters.website }}" target="_blank">
+                <div *ngIf="Lscenters.state === 'TAS'">{{ Lscenters.name }}</div>
+              </a>
+            </div>
+          </div>
+          <div class="mr-btm">
+            <strong>Victoria</strong>
+            <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+              <a href="{{ Lscenters.website }}" target="_blank">
+                <div *ngIf="Lscenters.state === 'VIC'">{{ Lscenters.name }}</div>
+              </a>
+            </div>
+          </div>
+          <div class="mr-btm">
+            <strong>Western Australia</strong>
+            <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+              <a href="{{ Lscenters.website }}" target="_blank">
+                <div *ngIf="Lscenters.state === 'WA'">{{ Lscenters.name }}</div>
+              </a>
+            </div>
+          </div> -->
+  </div>
+</ng-template>
+
+<ng-template #template>
+  <div class="modal-header tc">
+    <div class="row">
+      <div class="col-12 text-center modal-adj-head">
+        <div class="mt-3 mt-md-4">
+          <strong>Terms and Conditions – AW22 Spend & Receive</strong>
+        </div>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body tc">
+    <app-terms></app-terms>
+  </div>
+</ng-template>

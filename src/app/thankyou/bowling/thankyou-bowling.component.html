@@ -1,0 +1,190 @@
+<div class="thankyou-bowling-page">
+  <div class="thankyou-container">
+    <div
+      id="container-bowling"
+      class="container-bowling"
+      [ngClass]="bowlingctnStyle"
+    >
+      <div class="mt-5 d-md-block d-none">
+        <img class="img-fluid" src="../../../assets/img/howtoplay-txt.png" />
+      </div>
+      <div class="bowling-text my-4 d-md-block d-none">
+        CLICK ON THE GLASS OF JACK DANIEL'S AND SLIDE IT ACROSS THE TABLE.
+        <br />
+        WIN AN INSTANT PRIZE IF YOUR GLASS LANDS IN THE 'WIN' SECTION
+      </div>
+
+      <!-- <img
+        class="mobile tablet bg-bowling"
+        id="bg-bowling0"
+        src="../../../assets/img/bowling/Background.gif"
+        alt=""
+      /> -->
+
+      <div class="dbg-bowling">
+        <div class="video-overlay"></div>
+        <div class="videobg">
+          <div class="video-full desktop">
+            <video
+              id="bg-bowling0"
+              class="videobgid bg-bowling"
+              id="bg-bowling0"
+              class="videobgid bg-bowling"
+              autoplay="true"
+              muted="muted"
+              loop="true"
+              preload
+              poster=""
+              autobuffer
+              defaultmuted
+              playsinline
+              oncanplay="this.play()"
+              onloadedmetadata="this.muted = true"
+            >
+              <source
+                src="../../../assets/img/bowling/animation.mov"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+
+          <div class="video-full mobile">
+            <video
+              id="bg-bowling0"
+              class="videobgid bg-bowling"
+              id="bg-bowling0"
+              class="videobgid bg-bowling"
+              autoplay="true"
+              muted="muted"
+              loop="true"
+              preload
+              poster=""
+              autobuffer
+              defaultmuted
+              playsinline
+              oncanplay="this.play()"
+              onloadedmetadata="this.muted = true"
+            >
+              <source
+                src="../../../assets/img/bowling/animationmobile.mov"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- width="100%"
+      height="auto" -->
+
+      <div
+        class="howtoplay-content d-md-none d-block"
+        [ngClass]="howtoplayStyle"
+      >
+        <div class="howtoplay-picture">
+          <div class="picture">
+            <img
+              src="../../../assets/img/close-white.png"
+              class="img-fluid closed"
+              (click)="gotit()"
+            />
+            <img
+              src="../../../assets/img/howtoplay-pic.jpg"
+              class="img-fluid picplay"
+            />
+            <button
+              type="submit"
+              class="primarybtn btn3 mt-2"
+              (click)="gotit()"
+            >
+              GOT IT!
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="boardGame">
+        <div #initCtnwhisky [ngClass]="bowlingStyle">
+          <img
+            #whisky
+            class="bowling-btn"
+            src="../../../assets/img/bowling/Glass.png"
+            alt=""
+            cdkDragBoundary=".drag-boundary"
+            cdkDrag
+            cdkDragStartDelay
+            [cdkDragDisabled]="isPlayed"
+            (cdkDragStarted)="onDragStarted($event)"
+            (cdkDragEnded)="onDragEnded($event)"
+            (cdkDragMoved)="onDragMoved($event)"
+            (cdkDragReleased)="onDragReleased($event)"
+            (cdkDragEntered)="onDragEntered($event)"
+            [ngClass]="wiskyStyle"
+          />
+          <!-- (cdkDragEntered)="onDragEntered($event)" -->
+          <!-- (cdkDragReleased)="onDragReleased($event)" -->
+          <!-- (cdkDragEnded)="onDragEnded($event)" -->
+          <!-- (cdkDragMoved)="onDragMoved($event)" -->
+        </div>
+      </div>
+    </div>
+    <div class="thankyou-section container" [ngClass]="thankyouctnStyle">
+      <div class="row mt-3">
+        <div class="col-12">
+          <div class="thankyou-head my-5">
+            <img src="../../assets/img/nice-try.png" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="thankyou-text mb-4">
+            YOU DIDN’T WIN AN<br />
+            INSTANT PRIZE THIS TIME,<br />
+            BUT YOU’RE IN THE DRAW<br />
+            FOR A CHANCE TO WIN A
+          </div>
+          <img src="../../assets/img/red-centre.png" class="img-fluid mb-2" />
+          <img
+            src="../../assets/img/travel-experience.png"
+            class="img-fluid mb-2"
+          />
+          <img
+            src="../../assets/img/flights-nt-hotel-dining-2.png"
+            class="img-fluid"
+          />
+          <div class="thankyou-text-1 mt-5">DRAW DATE: 30.08.21</div>
+          <div class="thankyou-button mt-5">
+            <div class="thankyou-text-2">
+              SPEND ANOTHER $20 OR MORE AT THIRSTY CAMEL ON ANY JACK DANIEL'S PRODUCT TO PLAY AGAIN
+            </div>
+            <!-- <div class="thankyou-text-2">
+              SPEND ANOTHER $20 OR MORE AT THIRSTY CAMEL ON ANY JACK DANIEL’S
+              PRODUCT TO
+            </div>
+            <button
+              type="button"
+              class="primarybtn btn3 mt-4"
+              (click)="anotherCode()"
+            >
+              PLAY AGAIN
+            </button> -->
+          </div>
+          <div class="thankyou-text-3 mt-3">
+            NSW residents may only enter a maximum of twice per day
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12">
+          <img src="../../assets/img/tennessee-seltzer.png" class="img-fluid" />
+        </div>
+      </div>
+      <!-- <div class="row w100 mt-2 mt-md-5">
+        <div class="col-12 text-center">
+          <div class="primarybtn btn1 mt-5" (click)="onDone()">DONE</div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

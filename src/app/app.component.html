@@ -1,0 +1,34 @@
+<div class="load-icon-div"></div>
+<div class="fit-device fixed" [ngClass]="pageStyle" *ngIf="!ishome" #scroll>
+  <div class="main" [ngClass]="backgroundStyle" *ngIf="this.opencampaign">
+    <div *ngIf="giftsExhausted">
+      <div class="container">
+        <div class="msg-general">
+          Sorry, this promotion has ended as all $20 gift cards have been
+          exhausted.
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!giftsExhausted">
+      <app-breadcrum *ngIf="this.showbreadcrum"></app-breadcrum>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="main" [ngClass]="backgroundStyle" *ngIf="!this.opencampaign">
+    <div class="container">
+      <div class="msg-general">
+        <div *ngIf="this.pageNotAvailable">This page is not available</div>
+        <div *ngIf="!this.pageNotAvailable">
+          <div *ngIf="!this.validUrl">Invalid URL</div>
+          <div *ngIf="this.validUrl">
+            <div *ngIf="this.comingsoon">
+              Sorry, this campaign hasn't started yet.
+            </div>
+            <div *ngIf="!this.comingsoon">This campaign has now finished.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,128 @@
+//variables
+@font-face {
+  font-family: "SofiaProMedium";
+  src: url("/assets/font/OnlineWebFonts_COM_369505745852db57815d36b26ce31eed/Sofia-Pro-Regular/Web-Fonts/060e116a70e3096c52db16f61aaab194.eot");
+  src: url("/assets/font/OnlineWebFonts_COM_369505745852db57815d36b26ce31eed/Sofia-Pro-Regular/Web-Fonts/060e116a70e3096c52db16f61aaab194.eot?#iefix")
+      format("embedded-opentype"),
+    url("/assets/font/OnlineWebFonts_COM_369505745852db57815d36b26ce31eed/Sofia-Pro-Regular/Web-Fonts/060e116a70e3096c52db16f61aaab194.woff")
+      format("woff"),
+    url("/assets/font/OnlineWebFonts_COM_369505745852db57815d36b26ce31eed/Sofia-Pro-Regular/Web-Fonts/060e116a70e3096c52db16f61aaab194.woff2")
+      format("woff2"),
+    url("/assets/font/OnlineWebFonts_COM_369505745852db57815d36b26ce31eed/Sofia-Pro-Regular/Web-Fonts/060e116a70e3096c52db16f61aaab194.ttf")
+      format("truetype"),
+    url("/assets/font/OnlineWebFonts_COM_369505745852db57815d36b26ce31eed/Sofia-Pro-Regular/Web-Fonts/060e116a70e3096c52db16f61aaab194.svg#SofiaProMedium")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// @font-face {
+//   font-family: "Mazda Type Bold";
+//   src: url("/assets/font/Mazda-Type-Bold/Web-Fonts/42648ab0b917813518dcaf2213ebdbcb.eot");
+//   src: url("/assets/font/Mazda-Type-Bold/Web-Fonts/42648ab0b917813518dcaf2213ebdbcb.eot?#iefix")
+//       format("embedded-opentype"),
+//     url("/assets/font/Mazda-Type-Bold/Web-Fonts/42648ab0b917813518dcaf2213ebdbcb.woff")
+//       format("woff"),
+//     url("/assets/font/Mazda-Type-Bold/Web-Fonts/42648ab0b917813518dcaf2213ebdbcb.woff2")
+//       format("woff2"),
+//     url("/assets/font/Mazda-Type-Bold/Web-Fonts/42648ab0b917813518dcaf2213ebdbcb.ttf")
+//       format("truetype"),
+//     url("/assets/font/Mazda-Type-Bold/Web-Fonts/42648ab0b917813518dcaf2213ebdbcb.svg#Mazda Type Bold")
+//       format("svg");
+//   font-weight: normal;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+$brand-color: #23236e; // background home page
+$brand-color-1: #5471ff; // background other page
+$brand-color-2: #81fabf; // background breadcrumb
+$brand-color-3: #ffffff; // title color all page
+$brand-color-4: #ffffff; // background input home page
+$brand-color-5: #ffffff; // background input other page
+$brand-color-6: #ee4549; // border in home page
+$brand-color-7: #ffffff;
+$brand-color-8: #ffffff;
+$brand-color-9: #5b86d2;
+$brand-color-10: #ed84a4;
+$brand-color-11: #75d63c;
+$brand-color-12: #6f77b9; // background all page
+
+$error-color: #ff8585;
+$sucess-color: #81fabf;
+$font-color: #ffffff;
+
+$brand-font-family: "SofiaProMedium", sans-serif;
+$brand-font-family-1: "SofiaProMedium", sans-serif;
+$brand-font-family-2: "SofiaProMedium", sans-serif;
+$brand-font-family-3: "SofiaProMedium", sans-serif;
+$brand-font-family-4: "SofiaProMedium", sans-serif;
+$brand-font-family-5: "SofiaProMedium", sans-serif;
+$brand-font-family-6: "SofiaProMedium", sans-serif;
+$brand-font-family-7: "SofiaProMedium", sans-serif;
+
+$white: #ffffff;
+$black: #000000;
+$form-border: #000000;
+$marginscreenalignment: auto; //auto| 0(zero) if need center use auto or if need left use 0;
+$textalignment: center; //need center|left|right alignment in all places
+$btn_radius: 6px; //0; //52px; //need btn in square use 0|need btn in rounded corner use 52px
+
+$primarybtn: transparent;
+$primarybtn-color: #82fabf;
+$primarybtnop: transparent;
+$primarybtnop-color: #82fabf;
+
+$secondarybtn: transparent;
+$secondarybtn-color: #82fabf;
+$secondarybtnop: transparent;
+$secondarybtnop-color: #82fabf;
+
+//dot-animation colors
+$dot1: #be6b66;
+$dot2: #03312d;
+$dot3: #f5941d;
+$dot4: #ffffff;
+$statusbg: $brand-color;
+
+$image-1: "/assets/img/status-page-icons/your-details.png";
+$image-2: "/assets/img/status-page-icons/spend-details.png";
+$image-3: "/assets/img/status-page-icons/reward.png";
+$image-4: "/assets/img/status-page-icons/reward.png";
+$activeimage-1: "/assets/img/status-page-icons/your-details-active.png";
+$activeimage-2: "/assets/img/status-page-icons/spend-details-active.png";
+$activeimage-3: "/assets/img/status-page-icons/reward-active.png";
+$activeimage-4: "/assets/img/status-page-icons/reward-active.png";
+$status-color: #ffffff;
+$status-active-color: #23236e;
+
+$desktop: 1200px; //Desktop screen size.
+$pc: 992px; // PC screen size.
+$tablet: 768px; // Tablet screen size.
+$phone: 576px; // Phone screen size.
+$smp: 320px; //Small phone screen size.
+
+@mixin responsive($media) {
+  @if $media==desktop {
+    @media only screen and (max-width: $desktop) {
+      @content;
+    }
+  } @else if $media==pc {
+    @media only screen and (max-width: $pc) {
+      @content;
+    }
+  } @else if $media==tablet {
+    @media only screen and (max-width: $tablet) {
+      @content;
+    }
+  } @else if $media==phone {
+    @media only screen and (max-width: $phone) {
+      @content;
+    }
+  } @else if $media==smp {
+    @media only screen and (max-width: $smp) {
+      @content;
+    }
+  }
+}

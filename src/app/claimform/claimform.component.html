@@ -1,0 +1,182 @@
+<div class="claim-head">CLAIM FORM</div>
+<div class="claim-page">
+  <section class="container">
+    <div class="claim-container">
+      <div *ngIf="!showPageSuccess">
+        <div class="row">
+          <div class="col-12">
+            <div class="plus1 my-4 my-md-5">
+              We just need a few details so you can receive<br />
+              your $50 prize into your bank acount.
+            </div>
+          </div>
+        </div>
+        <div class="form-container">
+          <div class="row">
+            <form
+              class="form-horizontal"
+              [formGroup]="claimForm"
+              (ngSubmit)="onSubmit()"
+              autocomplete="{{ acc }}"
+            >
+              <div class="group-input">
+                <div class="col-12 error-text" *ngIf="errorMsg.message">
+                  {{ errorMsg.message }}
+                </div>
+
+                <div class="col-12" [ngClass]="accNameStyle" *ngIf="isAccName">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="accName"
+                    placeholder="Account Name"
+                    autocomplete="{{ acc }}"
+                    appAutoFocus
+                  />
+                </div>
+                <div class="col-12" [ngClass]="accBsbStyle" *ngIf="isAccBsb">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="accBsb"
+                    placeholder="BSB"
+                    autocomplete="{{ acc }}"
+                    maxlength="7"
+                  />
+                </div>
+                <div
+                  class="col-12"
+                  [ngClass]="accNumberStyle"
+                  *ngIf="isAccNumber"
+                >
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="accNumber"
+                    placeholder="Account Number"
+                    autocomplete="{{ acc }}"
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="plus3 my-4 my-md-5">
+                  You will receive your prize money no later than 28 days after
+                  the date on which you provided your bank account details. We
+                  will send you an email to let you know if your bank transfer
+                  has been successful or unsuccessful. If it has been
+                  unsuccessful, you will need to check over your bank details
+                  thoroughly and submit another claim.
+                </div>
+              </div>
+
+              <div class="col-12 textalignment">
+                <button
+                  type="submit"
+                  class="primarybtn btn1"
+                  [disabled]="buttonDisabled"
+                >
+                  <img
+                    src="../../assets/img/loadingWheel.gif"
+                    alt=""
+                    [ngClass]="loadingStyle"
+                  />
+
+                  SUBMIT
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <img
+              src="../../assets/img/claimUpGo2.png"
+              alt=""
+              class="image-upgo mt-4"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="showPageSuccess">
+        <div class="row">
+          <div class="col-12">
+            <div class="plus my-4 my-md-5">Success</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="plus1 my-3">We have received your details.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="plus2 my-3">
+              You will receive your prize money no later than<br />
+              28 days from today.
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-5">
+            <div class="primarybtn btn1" (click)="onDone()">Done</div>
+          </div>
+        </div>
+        <div class="row" *ngIf="this.campaignCenterService.pubid">
+          <div class="col-12 text-center">
+            <div class="fourthbtn btn4" (click)="anotherCode()">
+              Enter another barcode
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="clear: both"></div>
+</div>
+
+<ng-template #serverErrorCode>
+  <div class="modal-header modal-header-customize">
+    <button
+      type="button"
+      class="close float-right close-bigsize"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+      [disabled]="submitted"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body modal-body-large-text">
+    <div class="mt-5 my-sm-2 my-md-3">Oops! We seem to be having an issue.</div>
+    <div class="mt-3 my-sm-2 my-md-3">
+      <small> Please try again later. </small>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #errorTokenInvalid>
+  <div class="modal-header modal-header-customize">
+    <button
+      type="button"
+      class="close float-right close-bigsize"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+      [disabled]="submitted"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body modal-body-large-text">
+    <div class="mt-5 my-sm-2 my-md-3">
+      <!-- Oops! The token is invalid or has expired. -->
+      It looks like you have already completed the claim form. <br/>
+      We will send you an email to confirm once your payment has been processed.
+    </div>
+    <!-- <div class="mt-3 my-sm-2 my-md-3">
+      <small> Please try again later. </small>
+    </div> -->
+  </div>
+</ng-template>

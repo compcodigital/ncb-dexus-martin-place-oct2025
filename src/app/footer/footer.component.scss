@@ -1,0 +1,27 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import "../../variable.scss";
+
+.footer {
+  width: 100%;
+  color: $white;
+  // background-color: $white;
+  .row {
+    display: flex;
+    align-items: center;
+  }
+  .footer-logo-1 {
+    display: block;
+    margin: 0 auto;
+    max-width: 250px;
+    @include responsive(tablet) {
+      max-width: 100%;
+    }
+  }
+}
+
+.footer-text {
+  @include responsive(phone) {
+    text-align: center;
+  }
+}

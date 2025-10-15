@@ -1,0 +1,284 @@
+<div class="home-page">
+  <div class="row">
+    <div class="col-12">
+      <article class="container">
+        <section class="fx-logo">
+          <img src="../../assets/img/logo.png" class="img-fluid" />
+        </section>
+        <section>
+          <img
+            src="../../assets/img/banner-desktop.png"
+            class="img-fluid head-image d-none d-lg-block"
+          />
+          <img
+            src="../../assets/img/banner-mobile.png"
+            class="img-fluid head-image d-block d-lg-none"
+          />
+        </section>
+        <section class="my-4 mx-3 mx-lg-0">
+          <div class="head-subtitle d-none d-lg-block text-center">
+            Spend $10 or more at any participating Quay Quarter <br />
+            store and upload your receipt to claim a $10 e-Gift Card*.
+            <!-- Spend ${{
+              this.campaignCenterService.minimumspend | number : "1.0-0"
+            }}
+            on fashion for the chance to <br />
+            win a share of $25,000 worth of prizes.* -->
+          </div>
+          <div class="head-subtitle d-block d-lg-none text-center">
+            Spend $10 or more at any participating Quay Quarter store and upload
+            your receipt to claim a $10 e-Gift Card*.
+          </div>
+          <!-- <div class="border-white"></div>
+          <div class="head-subtitle-2">6 – 19 OCTOBER</div> -->
+          <form
+            class="form-horizontal"
+            [formGroup]="emailForm"
+            (ngSubmit)="onSubmit(emailForm.value.email)"
+            autocomplete="{{ acc }}"
+          >
+            <div class="row">
+              <div class="col-12">
+                <div class="email-label pb-2 text-center">
+                  Enter your email address below to get started.
+                </div>
+                <div class="error-text mb-3" *ngIf="errorMsg.message">
+                  {{ errorMsg.message }}
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="email">
+                  <div [ngClass]="emailStyle">
+                    <!-- <label class="control-label">*Email</label> -->
+                    <input
+                      type="email"
+                      class="form-control"
+                      formControlName="email"
+                      placeholder="Enter your email"
+                      autocomplete="{{ acc }}"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row mt-3">
+              <div class="col-12">
+                <div class="terms-label mt-4 d-none d-lg-block">
+                  ${{
+                    this.campaignCenterService.minimumspend | number : "1.0-0"
+                  }}
+                  A minimum spend of $100 in supermarkets <br />
+                  or $50 in the Market Room is required.
+                </div>
+                <div class="terms-label mt-4 d-block d-lg-none">
+                  A minimum spend of $100 in supermarkets or $50 in the Market
+                  Room is required.
+                </div>
+              </div>
+            </div> -->
+            <div class="row mt-3">
+              <div class="col-12">
+                <button
+                  type="submit"
+                  class="primarybtn btn1 mx-00"
+                  [disabled]="buttonDisabled"
+                >
+                  <img
+                    src="../../assets/img/loadingWheel.gif"
+                    alt=""
+                    [ngClass]="loadingStyle"
+                  />
+                  <span class="loading" [ngClass]="loadingStyle"></span>
+                  NEXT STEP >
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="mt-md-3 mb-5 mb-lg-0 terms-label">
+            <a
+              (click)="openModal(terms)"
+              data-target="#terms"
+              class="footer-tnc-link"
+              >*T&C’s apply</a
+            >: Only one e-Gift Card per person can be claimed each week during
+            the promotional period. Promotional Period: Monday 20 - Friday 24
+            October, and Monday 27 - Friday 31 October 2025. Receipts must be
+            dated same day as competition entry. Limited e-Gift Cards available
+            each day, only while stocks last. Go to
+            <a
+              href="quayquartersydney.com.au"
+              target="_blank"
+              rel="noopener noreferrer"
+              >quayquartersydney.com.au</a
+            >
+            for more info.
+            <!-- Entries close 5pm, Sunday 19 October 2025. <br />
+            *While stocks last.
+            <a
+              (click)="openModal(terms)"
+              data-target="#terms"
+              class="footer-tnc-link"
+              >Terms and conditions</a
+            >
+            apply. -->
+          </div>
+        </section>
+      </article>
+    </div>
+  </div>
+  <!-- <div class="border-orange"></div>
+  <div class="border-red"></div> -->
+</div>
+
+<ng-template #templateAlreadyEntered>
+  <div class="modal-header">
+    <button
+      type="button"
+      class="close float-right close-bigsize"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+      [disabled]="submitted"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body modal-alert">
+    <div class="oops">Oops!</div>
+    <div class="mt-4">
+      <small>
+        Only a maximum of two receipts for purchases made on the same day are
+        permitted.
+        <!-- Looks like you have already, claimed a $50 Gift Card today. Please
+        enter again tomorrow. -->
+      </small>
+    </div>
+  </div>
+</ng-template>
+<ng-template #serverErrorCode>
+  <div class="modal-header">
+    <button
+      type="button"
+      class="close float-right close-bigsize"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+      [disabled]="submitted"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body modal-alert">
+    <div class="oops">Oops!</div>
+    <div class="mt-4">
+      <small>We seem to be having an issue.Please try again later.</small>
+    </div>
+  </div>
+</ng-template>
+<ng-template #terms>
+  <!-- <img
+    src="../../assets/img/logo-qic.png"
+    alt=""
+    style="max-width: 100px; margin-left: 7px"
+  /> -->
+  <div class="modal-header tc m-0 py-0">
+    <div class="row">
+      <div class="col-12 text-center modal-adj-head">
+        <div class="mt-3 mt-md-2">
+          <strong>COMPETITION TERMS & CONDITIONS</strong>
+        </div>
+        <!-- <div class="mt-2 mb-md-2">
+          <strong>TERMS AND CONDITIONS</strong>
+        </div> -->
+        <!-- <div class="mt-2 mb-md-2 mt-md-1">
+          <strong>Terms and Conditions</strong>
+        </div> -->
+      </div>
+    </div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-terms></app-terms>
+  </div>
+</ng-template>
+
+<ng-template #participating>
+  <div class="modal-header">
+    <div class="title-participating">PARTICIPATING RETAILERS</div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="body-participating">
+      <div class="row">
+        <!-- *ngFor="let centers of this.campaignCenterService.centers" -->
+        <div
+          class="col-sm-6 col-md-6 col-lg-6"
+          *ngFor="let retailer of retailers"
+        >
+          {{ retailer.name }}
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="mr-btm">
+          <strong>New South Wales</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{ Lscenters.website }}" target="_blank">
+              <div *ngIf="Lscenters.state === 'NSW'">{{ Lscenters.name }}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>Queensland</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{ Lscenters.website }}" target="_blank">
+              <div *ngIf="Lscenters.state === 'QLD'">{{ Lscenters.name }}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>South Australia</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{ Lscenters.website }}" target="_blank">
+              <div *ngIf="Lscenters.state === 'SA'">{{ Lscenters.name }}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>Tasmania</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{ Lscenters.website }}" target="_blank">
+              <div *ngIf="Lscenters.state === 'TAS'">{{ Lscenters.name }}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>Victoria</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{ Lscenters.website }}" target="_blank">
+              <div *ngIf="Lscenters.state === 'VIC'">{{ Lscenters.name }}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>Western Australia</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{ Lscenters.website }}" target="_blank">
+              <div *ngIf="Lscenters.state === 'WA'">{{ Lscenters.name }}</div>
+            </a>
+          </div>
+        </div> -->
+  </div>
+</ng-template>

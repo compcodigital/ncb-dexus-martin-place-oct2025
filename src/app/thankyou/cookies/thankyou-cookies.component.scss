@@ -1,0 +1,115 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import "../../../variable.scss";
+
+.thankyou-page {
+  .thankyou-animation {
+    position: relative;
+    max-width: 774px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 70vh;
+    @include responsive(tablet) {
+      min-height: 65vh;
+    }
+    img {
+      width: 100%;
+    }
+    .btn-see {
+      margin: auto;
+      height: 60px;
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      z-index: 3;
+      right: 0;
+      text-align: center;
+      max-width: 510px;
+      @include responsive(tablet) {
+        bottom: -40px;
+        padding: 0 14px;
+      }
+    }
+  }
+  .thankyou-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 70vh;
+      @include responsive(tablet) {
+        min-height: 65vh;
+      }
+    }
+    .thankyou-head {
+      font-size: 1.8rem;
+      line-height: 2.3rem;
+      color: $brand-color-3;
+      font-family: $brand-font-family-7;
+      // font-weight: bold;
+      @include responsive(tablet) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
+    .thankyou-text {
+      font-size: 1.1rem;
+      line-height: 1.7rem;
+      p,
+      strong,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 1.2rem !important;
+        line-height: 1.7rem !important;
+        @include responsive(tablet) {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+      }
+      @include responsive(tablet) {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+    }
+    .thankyou-text-2 {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+    .thankyou-terms {
+      font-size: 0.8rem;
+      line-height: 1.4rem;
+      a {
+        font-size: 0.8rem;
+        line-height: 1.4rem;
+        color: $white;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+    .primarybtn {
+      display: inline-block;
+    }
+  }
+}
+
+.fx-content-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .fx-image {
+    width: 68% !important;
+  }
+}

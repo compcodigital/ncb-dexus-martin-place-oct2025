@@ -1,0 +1,239 @@
+<div class="thankyou-page mb-5 mb-lg-0">
+  <section class="container">
+    <!-- <div class="row" *ngIf="showContainerAnimation">
+      <div class="col-12">
+        <div class="thankyou-container">
+          <div class="row">
+            <div class="col-12">
+              <img
+                *ngIf="showGift"
+                src="../../assets/img/withoutflowers.gif"
+                class="img-fluid fx-animation"
+              />
+              <img
+                *ngIf="!showGift"
+                src="../../assets/img/withoutflowers.jpeg"
+                class="img-fluid fx-animation"
+              />
+            </div>
+          </div>
+          <div class="row mt-5 mb-5" *ngIf="!showGift">
+            <div class="col-12">
+              <div class="primarybtn btn1" (click)="onClickHere()">
+                OPEN TO REVEAL IF YOU ARE A WINNER
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- <div class="row" *ngIf="!showContainerAnimation"> -->
+    <div class="row">
+      <div class="col-12">
+        <div class="thankyou-container" [@fadeIn]>
+          <div class="row">
+            <div class="col-12">
+              <div class="thankyou-head">Thank you for playing!</div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-12">
+              <div class="thankyou-text-2">
+                All of today’s prizes have already been claimed. There are more
+                available to win tomorrow.
+              </div>
+            </div>
+          </div>
+          <!-- <div class="row mt-4">
+            <div class="col-12">
+              <div class="thankyou-text-2 d-none d-lg-block">
+                Enter as many times as you like - for another entry for your
+                chance to win, simply <br />
+                make another spends of $100 of more in one day at participating
+                Eastland retailers.
+              </div>
+              <div class="thankyou-text-2 d-block d-lg-none">
+                Enter as many times as you like - for another entry for your
+                chance to win, simply make another spends of $100 of more in one
+                day at participating Eastland retailers.
+              </div>
+            </div>
+          </div> -->
+          <div class="row mt-5">
+            <div class="col-12">
+              <div class="primarybtn btn1" (click)="onDone()">DONE</div>
+              <!-- <a class="primarybtn btn1" href="#"> LEARN MORE HERE </a> -->
+            </div>
+          </div>
+          <!-- <div class="row mt-5">
+            <div class="col-12">
+              <div class="thankyou-text-3">
+                <a (click)="openModal(terms)" data-target="#terms">
+                  *Terms & Conditions</a
+                >
+                apply.
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="row mt-4">
+            <div class="col-12 textalignment">
+              <div class="fourthbtn btn4" (click)="anotherCode()">
+                ADD ANOTHER RECEIPT
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<ng-template #terms>
+  <div class="modal-header tc">
+    <div class="row">
+      <div class="col-12 text-center modal-adj-head">
+        <div class="mt-3 mt-md-24">
+          <strong>COMPETITION TERMS & CONDITIONS</strong>
+        </div>
+        <div class="mt-2 mb-md-2">
+          <strong>Win Groceries For A Year</strong>
+        </div>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-terms></app-terms>
+  </div>
+</ng-template>
+<!-- <div class="thankyou-page">
+  <section class="container">
+    <div class="thankyou-container" [@fadeIn]>
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="thankyou-head">Thank you for shopping at Tweed City.</div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12">
+          <div *ngIf="giftsExhausted">
+            <div class="thankyou-text-1">
+              To claim your free $20 gift card, please visit the Customer
+              Service Desk located near Cotton On Kids during centre hours and
+              present your purchase receipt and photo ID. Gift cards must be
+              claimed by Monday 4th July 2022.
+            </div>
+          </div>
+          <div *ngIf="!giftsExhausted">
+            <div class="thankyou-text">
+              To claim your free $20 gift card, please visit the Customer
+              Service Desk located near Cotton On Kids during centre hours and
+              present your purchase receipt and photo ID. Gift cards must be
+              claimed by Monday 4th July 2022.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="thankyou-text-2">
+            Gift cards must be claimed by Monday 4th July 2022.
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="primarybtn btn1" (click)="onDone()">DONE</div>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col-12 textalignment">
+          <div class="fourthbtn btn4" (click)="anotherCode()">ENTER ANOTHER UNIQUE CODE
+          </div>
+        </div>
+      </div> 
+    </div>
+  </section>
+</div>
+
+<ng-template #participating>
+  <div class="modal-header">
+    <div class="title-participating">PARTICIPATING RETAILERS</div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="body-participating">
+      <div
+        class="row"
+        *ngFor="let centers of this.campaignCenterService.centers"
+      >
+        <div class="col-3" *ngFor="let retailers of centers.retailers">
+          {{ retailers.name }}
+        </div>
+      </div>
+    </div>
+
+    <div class="mr-btm">
+          <strong>New South Wales</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{ Lscenters.website }}" target="_blank">
+              <div *ngIf="Lscenters.state === 'NSW'">{{ Lscenters.name }}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>Queensland</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{ Lscenters.website }}" target="_blank">
+              <div *ngIf="Lscenters.state === 'QLD'">{{ Lscenters.name }}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>South Australia</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{ Lscenters.website }}" target="_blank">
+              <div *ngIf="Lscenters.state === 'SA'">{{ Lscenters.name }}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>Tasmania</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{ Lscenters.website }}" target="_blank">
+              <div *ngIf="Lscenters.state === 'TAS'">{{ Lscenters.name }}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>Victoria</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{ Lscenters.website }}" target="_blank">
+              <div *ngIf="Lscenters.state === 'VIC'">{{ Lscenters.name }}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>Western Australia</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{ Lscenters.website }}" target="_blank">
+              <div *ngIf="Lscenters.state === 'WA'">{{ Lscenters.name }}</div>
+            </a>
+          </div>
+        </div> 
+  </div>
+</ng-template> -->

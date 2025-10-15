@@ -1,0 +1,114 @@
+<div class="thankyou-page">
+  <div class="thankyou-animation" [ngClass]="clickStyle">
+    <div class="relative fx-content-image">
+      <!-- <img src="{{ src }}" alt="Cookies" [ngClass]="showImg" class="fx-image" /> -->
+      <img src="{{ srcGif }}" alt="Cookies" [ngClass]="showGif" />
+
+      <!-- <video
+      [ngClass]="showVideo"
+      width="100%"
+      height="auto"
+      [src]="srcVideo"
+      [autoplay]="false"
+      [loop]="false"
+      #video
+    ></video> -->
+
+      <!-- <div class="btn-see">
+        <div
+          class="primarybtn btn1"
+          (click)="opengift()"
+          [ngClass]="boxStyleBtn"
+        >
+          CLICK TO SEE IF YOU ARE AN INSTANT WINNER
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <div class="thankyou-container" [ngClass]="displayStyle">
+    <section class="container">
+      <div *ngIf="giftsExhausted">
+        <div class="thankyou-head mt-4">
+          Thank you for entering the Quay Quarter Spend $10. Get $10. promotion.
+          The prize pool for today has been exhausted.
+        </div>
+        <div class="thankyou-text mt-4">
+          Please check back on the next available entry day within the
+          promotional period.
+          <br />
+          <br />
+          To learn more and view the terms and conditions, visit
+          quayquartersydney.com.au
+        </div>
+      </div>
+
+      <div *ngIf="!giftsExhausted">
+        <div class="thankyou-text mt-4">
+          Looks like you've already won during this promotional week.
+          <br /><br />
+          Each customer is limited to one e-Gift Card per promotional week.
+        </div>
+      </div>
+
+      <!-- <div class="thankyou-text mt-4 d-block d-lg-none">
+        For another chance to win, simply spend $10 or more at any participating
+        retailer at Mornington Central.
+      </div> -->
+      <!-- <div class="thankyou-text-2 mt-4 d-none d-lg-block">
+        Plus, you have been entered into the major prize draw to win one of two
+        <br />
+        $500 Mornington Central vouchers*.
+      </div> -->
+      <!-- <div class="thankyou-text-2 mt-4 d-block d-lg-none">
+        Plus, you have been entered into the major prize draw to win one of two
+        $500 Mornington Central vouchers*.
+      </div> -->
+
+      <!-- <div class="thankyou-terms mt-4">Entries close 5pm, 31 May 2025.</div>
+      <div class="thankyou-terms mt-4">
+        *<a
+          (click)="openModal(terms)"
+          data-target="#terms"
+          class="footer-tnc-link"
+          >Terms & Conditions</a
+        >
+        apply.
+      </div> -->
+
+      <div class="row mt-5">
+        <!-- <div class="col-12">
+          <div class="primarybtn btn1" (click)="onDone()">DONE</div>
+        </div> -->
+        <div class="col-12">
+          <div class="primarybtn btn1" (click)="onDone()">EXIT ></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<ng-template #terms>
+  <div class="modal-header tc">
+    <div class="row">
+      <div class="col-12 text-center modal-adj-head">
+        <div class="mt-3 mt-md-2">
+          <strong>Sunbury Square</strong>
+        </div>
+        <div class="mt-2 mb-md-2">
+          <strong>‘Spend and Scan’ Promotion</strong>
+        </div>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-terms></app-terms>
+  </div>
+</ng-template>

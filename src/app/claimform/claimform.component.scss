@@ -1,0 +1,148 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import "../../variable.scss";
+
+.claim-head {
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  background: #e63956;
+  font-family: $brand-font-family-5;
+  @include responsive(phone) {
+    font-size: 1.1em;
+  }
+}
+.claim-page {
+  margin: 0;
+  .claim-container {
+    width: 75%;
+    display: flex;
+    margin: 0.3em auto 0vh;
+    flex-direction: column;
+    justify-content: $textalignment;
+    @include responsive(tablet) {
+      width: 100%;
+    }
+    .plus {
+      text-align: center;
+      font-family: $brand-font-family-5;
+      color: $brand-color-6;
+      font-size: 30px;
+      line-height: 40px;
+      margin: 1vh $marginscreenalignment;
+      img {
+        width: 30%;
+        margin: 5vh auto 3vh;
+      }
+    }
+    .plus1 {
+      text-align: center;
+      font-family: $brand-font-family-1;
+      font-size: 1.8em;
+      line-height: 1.2em;
+      font-weight: 400;
+      @include responsive(tablet) {
+        font-size: 1.4em;
+      }
+      @include responsive(phone) {
+        font-size: 1.2em;
+      }
+    }
+    .plus2 {
+      text-align: center;
+      font-family: $brand-font-family-1;
+      font-size: 1.2em;
+      line-height: 1.2em;
+      font-weight: 300;
+      @include responsive(tablet) {
+        font-size: 1em;
+      }
+      @include responsive(phone) {
+        font-size: 0.8em;
+      }
+    }
+    .plus3 {
+      text-align: center;
+      font-weight: 300;
+      font-size: 0.9em;
+      @include responsive(tablet) {
+        font-size: 0.9em;
+      }
+      @include responsive(phone) {
+        font-size: 0.8em;
+      }
+    }
+    .image-upgo {
+      max-width: 100%;
+      width: 55%;
+      margin: 0 auto;
+      display: block;
+    }
+    .form-control {
+      border-radius: 0px;
+    }
+    .form-container {
+      form {
+        width: 100%;
+        .form-control {
+          height: 43px;
+          color: #000;
+          margin-bottom: 2%;
+          font-size: 1em;
+          border: 0px;
+          font-weight: bold;
+
+          @include responsive(phone) {
+            height: 47px;
+            color: #000;
+            font-size: 14px;
+            border: 2px solid #fff;
+          }
+        }
+      }
+      .group-input {
+        width: 80%;
+        margin: 0 auto;
+        @include responsive(phone) {
+          width: 100%;
+        }
+      }
+
+      input.form-control.ng-valid.ng-not-empty.ng-dirty.ng-valid-parse.ng-touched,
+      input.form-control:focus {
+        background: #f1b4c2;
+      }
+
+      input.form-control:focus {
+        background: #fff;
+      }
+
+      input.form-control {
+        caret-color: auto;
+      }
+    }
+  }
+  .error-text {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  input::-webkit-contacts-auto-fill-button,
+  input::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+  }
+}
+.oops {
+  font-size: 57px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: condensed;
+  line-height: normal;
+  letter-spacing: normal;
+  // text-align: center;
+  color: $brand-color;
+}
+

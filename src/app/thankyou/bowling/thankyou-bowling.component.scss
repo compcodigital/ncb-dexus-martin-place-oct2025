@@ -1,0 +1,1430 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import "../../../variable.scss";
+
+.boardGame {
+  // border: 2px solid red;
+  position: absolute;
+  /* width: 100%; */
+  height: 56%;
+  /* top: 0; */
+  left: 18%;
+  right: 0;
+  width: 64%;
+  text-align: center;
+  bottom: 0;
+  z-index: 10;
+  @include responsive(phone) {
+    height: 70%;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+}
+
+.thankyou-bowling-page {
+  .thankyou-container {
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+
+    .container-bowling {
+      position: relative;
+      .bowling-text {
+        font-size: 1rem;
+        line-height: 23px;
+        font-family: $brand-font-family;
+        @include responsive(phone) {
+          font-size: 0.9rem;
+        }
+      }
+      .dbg-bowling {
+        width: 100%;
+        height: 760px;
+        max-width: 600px;
+        // max-height: 760px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        // display: block;
+        @include responsive(phone) {
+          height: 100vh;
+        }
+      }
+      .bg-bowling {
+        width: 100%;
+        height: 760px;
+        max-width: 600px;
+        // max-height: 760px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        // display: block;
+        @include responsive(phone) {
+          height: 100vh;
+        }
+      }
+      .drag-boundary {
+        // width: 30%;
+        // height: 30vh;
+        // position: absolute;
+        // // bottom: 0;
+        // top: 75.5%;
+        // left: 35%;
+        width: 100%;
+        height: 40%;
+        position: absolute;
+        top: 60%;
+        // left: 18%;
+        // border: 2px solid green;
+        // overflow: hidden;
+        @include responsive(phone) {
+          // height: 24%;
+          // top: 76%;
+          // height: 40%;
+          // top: 60%;
+          height: 35%;
+          top: 65%;
+        }
+      }
+      .notdrag-boundary {
+        height: 100%;
+        width: 64%;
+        left: 18%;
+        position: absolute;
+        // top: 44%;
+        // border: 2px solid green;
+        @include responsive(phone) {
+          // height: 69%;
+          // top: 31%;
+        }
+      }
+      .bowling-btn {
+        cursor: pointer;
+        // width: 20vh;
+        width: 12vh;
+        text-align: center;
+        bottom: 0;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+
+        @include responsive(phone) {
+          // width: 30%;
+          width: 9vh;
+        }
+      }
+      .howtoplay-content {
+        .howtoplay-picture {
+          width: 100%;
+          // bottom: 35px;
+          top: 0;
+          left: calc(50% - 0px);
+          position: absolute;
+          transform: translateX(-50%);
+          z-index: 100;
+
+          /* iPhone X Portrait */
+          @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+            top: 52px;
+          }
+          .picture {
+            max-width: 100%;
+            // max-width: 351px;
+            margin: 0 20px;
+            position: relative;
+            .closed {
+              position: absolute;
+              right: 8px;
+              top: 8px;
+              width: 24px;
+              cursor: pointer;
+            }
+            .picplay {
+              width: 100%;
+              // height: 88vh;
+              // height: 84vh;
+            }
+            img {
+              display: block;
+              margin: 0 auto;
+            }
+            button {
+              bottom: 20px;
+              right: 20px;
+              position: absolute;
+            }
+          }
+        }
+      }
+    }
+    .thankyou-section {
+      position: relative;
+      .thankyou-text {
+        font-size: 1.2rem;
+        font-family: $brand-font-family;
+        @include responsive(phone) {
+          font-size: 1rem;
+        }
+      }
+      .thankyou-text-1 {
+        font-size: 1.2rem;
+        font-family: $brand-font-family-2;
+        @include responsive(phone) {
+          font-size: 1rem;
+        }
+      }
+      .thankyou-text-2 {
+        font-size: 1.1rem;
+        font-family: $brand-font-family-2;
+        @include responsive(phone) {
+          font-size: 0.9rem;
+        }
+      }
+      .thankyou-text-3 {
+        font-size: 1rem;
+        font-family: $brand-font-family-2;
+        @include responsive(phone) {
+          font-size: 0.8rem;
+        }
+      }
+      .thankyou-button {
+        padding: 20px;
+        border: 2px solid #ffffff;
+      }
+    }
+  }
+}
+
+// INIT LEFT
+.powerSlowLeft1 {
+  animation: powerSlowLeft1 2s forwards;
+  -moz-animation: powerSlowLeft1 2s forwards; /* Firefox */
+  -webkit-animation: powerSlowLeft1 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerSlowLeft1Phone 2s forwards;
+    -moz-animation: powerSlowLeft1Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerSlowLeft1Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerSlowLeft1 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    left: 10%;
+  }
+}
+@-moz-keyframes powerSlowLeft1 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    left: 10%;
+  }
+}
+@-webkit-keyframes powerSlowLeft1 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    left: 10%;
+  }
+}
+
+@keyframes powerSlowLeft1Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    left: 10%;
+  }
+}
+@-moz-keyframes powerSlowLeft1Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    left: 10%;
+  }
+}
+@-webkit-keyframes powerSlowLeft1Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    left: 10%;
+  }
+}
+
+.powerSlowLeft2 {
+  animation: powerSlowLeft2 2s forwards;
+  -moz-animation: powerSlowLeft2 2s forwards; /* Firefox */
+  -webkit-animation: powerSlowLeft2 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerSlowLeft2Phone 2s forwards;
+    -moz-animation: powerSlowLeft2Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerSlowLeft2Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerSlowLeft2 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    left: 40%;
+  }
+}
+@-moz-keyframes powerSlowLeft2 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    left: 40%;
+  }
+}
+@-webkit-keyframes powerSlowLeft2 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    left: 40%;
+  }
+}
+
+@keyframes powerSlowLeft2Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    left: 30%;
+  }
+}
+@-moz-keyframes powerSlowLeft2Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    left: 30%;
+  }
+}
+@-webkit-keyframes powerSlowLeft2Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    left: 30%;
+  }
+}
+
+.powerSlowLeft3 {
+  animation: powerSlowLeft3 2s forwards;
+  -moz-animation: powerSlowLeft3 2s forwards; /* Firefox */
+  -webkit-animation: powerSlowLeft3 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerSlowLeft3Phone 2s forwards;
+    -moz-animation: powerSlowLeft3Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerSlowLeft3Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerSlowLeft3 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    left: 40%;
+  }
+}
+@-moz-keyframes powerSlowLeft3 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    left: 40%;
+  }
+}
+@-webkit-keyframes powerSlowLeft3 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    left: 40%;
+  }
+}
+
+@keyframes powerSlowLeft3Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    left: 50%;
+  }
+}
+@-moz-keyframes powerSlowLeft3Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    left: 50%;
+  }
+}
+@-webkit-keyframes powerSlowLeft3Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    left: 50%;
+  }
+}
+
+.powerRegularLeft1 {
+  animation: powerRegularLeft1 2s forwards;
+  -moz-animation: powerRegularLeft1 2s forwards; /* Firefox */
+  -webkit-animation: powerRegularLeft1 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerRegularLeft1Phone 2s forwards;
+    -moz-animation: powerRegularLeft1Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerRegularLeft1Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerRegularLeft1 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    left: 10%;
+  }
+}
+@-moz-keyframes powerRegularLeft1 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    left: 10%;
+  }
+}
+@-webkit-keyframes powerRegularLeft1 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    left: 10%;
+  }
+}
+
+@keyframes powerRegularLeft1Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    left: 20%;
+  }
+}
+@-moz-keyframes powerRegularLeft1Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    left: 20%;
+  }
+}
+@-webkit-keyframes powerRegularLeft1Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    left: 20%;
+  }
+}
+
+.powerRegularLeft2 {
+  animation: powerRegularLeft2 2s forwards;
+  -moz-animation: powerRegularLeft2 2s forwards; /* Firefox */
+  -webkit-animation: powerRegularLeft2 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerRegularLeft2Phone 2s forwards;
+    -moz-animation: powerRegularLeft2Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerRegularLeft2Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerRegularLeft2 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    left: 30%;
+  }
+}
+@-moz-keyframes powerRegularLeft2 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    left: 30%;
+  }
+}
+@-webkit-keyframes powerRegularLeft2 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    left: 30%;
+  }
+}
+
+@keyframes powerRegularLeft2Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    left: 46%;
+  }
+}
+@-moz-keyframes powerRegularLeft2Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    left: 46%;
+  }
+}
+@-webkit-keyframes powerRegularLeft2Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    left: 46%;
+  }
+}
+
+.powerRegularLeft3 {
+  animation: powerRegularLeft3 2s forwards;
+  -moz-animation: powerRegularLeft3 2s forwards; /* Firefox */
+  -webkit-animation: powerRegularLeft3 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerRegularLeft3Phone 2s forwards;
+    -moz-animation: powerRegularLeft3Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerRegularLeft3Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerRegularLeft3 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55%;
+    left: 60%;
+  }
+}
+@-moz-keyframes powerRegularLeft3 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55%;
+    left: 60%;
+  }
+}
+@-webkit-keyframes powerRegularLeft3 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55%;
+    left: 60%;
+  }
+}
+
+@keyframes powerRegularLeft3Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    left: 50%;
+  }
+}
+@-moz-keyframes powerRegularLeft3Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    left: 50%;
+  }
+}
+@-webkit-keyframes powerRegularLeft3Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    left: 50%;
+  }
+}
+
+.powerAdvanceLeft1 {
+  animation: powerAdvanceLeft1 2s forwards;
+  -moz-animation: powerAdvanceLeft1 2s forwards; /* Firefox */
+  -webkit-animation: powerAdvanceLeft1 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerAdvanceLeft1Phone 2s forwards;
+    -moz-animation: powerAdvanceLeft1Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerAdvanceLeft1Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerAdvanceLeft1 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    left: 10%;
+  }
+}
+@-moz-keyframes powerAdvanceLeft1 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    left: 10%;
+  }
+}
+@-webkit-keyframes powerAdvanceLeft1 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    left: 10%;
+  }
+}
+
+@keyframes powerAdvanceLeft1Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    left: 25%;
+  }
+}
+@-moz-keyframes powerAdvanceLeft1Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    left: 25%;
+  }
+}
+@-webkit-keyframes powerAdvanceLeft1Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    left: 25%;
+  }
+}
+
+.powerAdvanceLeft2 {
+  animation: powerAdvanceLeft2 2s forwards;
+  -moz-animation: powerAdvanceLeft2 2s forwards; /* Firefox */
+  -webkit-animation: powerAdvanceLeft2 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerAdvanceLeft2Phone 2s forwards;
+    -moz-animation: powerAdvanceLeft2Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerAdvanceLeft2Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerAdvanceLeft2 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    left: 40%;
+  }
+}
+@-moz-keyframes powerAdvanceLeft2 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    left: 40%;
+  }
+}
+@-webkit-keyframes powerAdvanceLeft2 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    left: 40%;
+  }
+}
+
+@keyframes powerAdvanceLeft2Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    left: 46%;
+  }
+}
+@-moz-keyframes powerAdvanceLeft2Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    left: 46%;
+  }
+}
+@-webkit-keyframes powerAdvanceLeft2Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    left: 46%;
+  }
+}
+
+.powerAdvanceLeft3 {
+  animation: powerAdvanceLeft3 2s forwards;
+  -moz-animation: powerAdvanceLeft3 2s forwards; /* Firefox */
+  -webkit-animation: powerAdvanceLeft3 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerAdvanceLeft3Phone 2s forwards;
+    -moz-animation: powerAdvanceLeft3Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerAdvanceLeft3Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerAdvanceLeft3 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    left: 80%;
+  }
+}
+@-moz-keyframes powerAdvanceLeft3 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    left: 80%;
+  }
+}
+@-webkit-keyframes powerAdvanceLeft3 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    left: 80%;
+  }
+}
+
+@keyframes powerAdvanceLeft3Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    left: 70%;
+  }
+}
+@-moz-keyframes powerAdvanceLeft3Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    left: 70%;
+  }
+}
+@-webkit-keyframes powerAdvanceLeft3Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    left: 70%;
+  }
+}
+// // // // // // // // // // // // // // // // // //
+// INIT RIGHT
+// // // // // // // // // // // // // // // // // //
+.powerSlowRight1 {
+  animation: powerSlowRight1 2s forwards;
+  -moz-animation: powerSlowRight1 2s forwards; /* Firefox */
+  -webkit-animation: powerSlowRight1 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerSlowRight1Phone 2s forwards;
+    -moz-animation: powerSlowRight1Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerSlowRight1Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerSlowRight1 {
+  from {
+  }
+  to {
+   width: 9vh;
+    bottom: 40%;
+    right: 10%;
+  }
+}
+@-moz-keyframes powerSlowRight1 {
+  from {
+  }
+  to {
+   width: 9vh;
+    bottom: 40%;
+    right: 10%;
+  }
+}
+@-webkit-keyframes powerSlowRight1 {
+  from {
+  }
+  to {
+   width: 9vh;
+    bottom: 40%;
+    right: 10%;
+  }
+}
+
+@keyframes powerSlowRight1Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    right: 10%;
+  }
+}
+@-moz-keyframes powerSlowRight1Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    right: 10%;
+  }
+}
+@-webkit-keyframes powerSlowRight1Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    right: 10%;
+  }
+}
+
+.powerSlowRight2 {
+  animation: powerSlowRight2 2s forwards;
+  -moz-animation: powerSlowRight2 2s forwards; /* Firefox */
+  -webkit-animation: powerSlowRight2 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerSlowRight2Phone 2s forwards;
+    -moz-animation: powerSlowRight2Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerSlowRight2Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerSlowRight2 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    right: 40%;
+  }
+}
+@-moz-keyframes powerSlowRight2 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    right: 40%;
+  }
+}
+@-webkit-keyframes powerSlowRight2 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    right: 40%;
+  }
+}
+
+@keyframes powerSlowRight2Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    right: 30%;
+  }
+}
+@-moz-keyframes powerSlowRight2Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    right: 30%;
+  }
+}
+@-webkit-keyframes powerSlowRight2Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    right: 30%;
+  }
+}
+
+.powerSlowRight3 {
+  animation: powerSlowRight3 2s forwards;
+  -moz-animation: powerSlowRight3 2s forwards; /* Firefox */
+  -webkit-animation: powerSlowRight3 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerSlowRight3Phone 2s forwards;
+    -moz-animation: powerSlowRight3Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerSlowRight3Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerSlowRight3 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    right: 40%;
+  }
+}
+@-moz-keyframes powerSlowRight3 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    right: 40%;
+  }
+}
+@-webkit-keyframes powerSlowRight3 {
+  from {
+  }
+  to {
+    width: 9vh;
+    bottom: 40%;
+    right: 40%;
+  }
+}
+
+@keyframes powerSlowRight3Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    right: 50%;
+  }
+}
+@-moz-keyframes powerSlowRight3Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    right: 50%;
+  }
+}
+@-webkit-keyframes powerSlowRight3Phone {
+  from {
+  }
+  to {
+    width: 6.5vh;
+    bottom: 50%;
+    right: 50%;
+  }
+}
+.powerRegularRight1 {
+  animation: powerRegularRight1 2s forwards;
+  -moz-animation: powerRegularRight1 2s forwards; /* Firefox */
+  -webkit-animation: powerRegularRight1 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerRegularRight1Phone 2s forwards;
+    -moz-animation: powerRegularRight1Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerRegularRight1Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerRegularRight1 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    right: 10%;
+  }
+}
+@-moz-keyframes powerRegularRight1 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    right: 10%;
+  }
+}
+@-webkit-keyframes powerRegularRight1 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    right: 10%;
+  }
+}
+
+@keyframes powerRegularRight1Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    right: 20%;
+  }
+}
+@-moz-keyframes powerRegularRight1Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    right: 20%;
+  }
+}
+@-webkit-keyframes powerRegularRight1Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    right: 20%;
+  }
+}
+
+.powerRegularRight2 {
+  animation: powerRegularRight2 2s forwards;
+  -moz-animation: powerRegularRight2 2s forwards; /* Firefox */
+  -webkit-animation: powerRegularRight2 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerRegularRight2Phone 2s forwards;
+    -moz-animation: powerRegularRight2Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerRegularRight2Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerRegularRight2 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    right: 30%;
+  }
+}
+@-moz-keyframes powerRegularRight2 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    right: 30%;
+  }
+}
+@-webkit-keyframes powerRegularRight2 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    right: 30%;
+  }
+}
+
+@keyframes powerRegularRight2Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    right: 46%;
+  }
+}
+@-moz-keyframes powerRegularRight2Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    right: 46%;
+  }
+}
+@-webkit-keyframes powerRegularRight2Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    right: 46%;
+  }
+}
+
+.powerRegularRight3 {
+  animation: powerRegularRight3 2s forwards;
+  -moz-animation: powerRegularRight3 2s forwards; /* Firefox */
+  -webkit-animation: powerRegularRight3 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerRegularRight3Phone 2s forwards;
+    -moz-animation: powerRegularRight3Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerRegularRight3Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerRegularRight3 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    right: 60%;
+  }
+}
+@-moz-keyframes powerRegularRight3 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    right: 60%;
+  }
+}
+@-webkit-keyframes powerRegularRight3 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 65%;
+    right: 60%;
+  }
+}
+
+@keyframes powerRegularRight3Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    right: 50%;
+  }
+}
+@-moz-keyframes powerRegularRight3Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    right: 50%;
+  }
+}
+@-webkit-keyframes powerRegularRight3Phone {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 55.5%;
+    right: 50%;
+  }
+}
+.powerAdvanceRight1 {
+  animation: powerAdvanceRight1 2s forwards;
+  -moz-animation: powerAdvanceRight1 2s forwards; /* Firefox */
+  -webkit-animation: powerAdvanceRight1 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerAdvanceRight1Phone 2s forwards;
+    -moz-animation: powerAdvanceRight1Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerAdvanceRight1Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerAdvanceRight1 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    right: 10%;
+  }
+}
+@-moz-keyframes powerAdvanceRight1 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    right: 10%;
+  }
+}
+@-webkit-keyframes powerAdvanceRight1 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    right: 10%;
+  }
+}
+
+@keyframes powerAdvanceRight1Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    right: 25%;
+  }
+}
+@-moz-keyframes powerAdvanceRight1Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    right: 25%;
+  }
+}
+@-webkit-keyframes powerAdvanceRight1Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    right: 25%;
+  }
+}
+
+.powerAdvanceRight2 {
+  animation: powerAdvanceRight2 2s forwards;
+  -moz-animation: powerAdvanceRight2 2s forwards; /* Firefox */
+  -webkit-animation: powerAdvanceRight2 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerAdvanceRight2Phone 2s forwards;
+    -moz-animation: powerAdvanceRight2Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerAdvanceRight2Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerAdvanceRight2 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    // right: 60%;
+    right: 40%;
+  }
+}
+@-moz-keyframes powerAdvanceRight2 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    // right: 60%;
+    right: 40%;
+  }
+}
+@-webkit-keyframes powerAdvanceRight2 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    // right: 60%;
+    right: 40%;
+  }
+}
+
+@keyframes powerAdvanceRight2Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    right: 46%;
+  }
+}
+@-moz-keyframes powerAdvanceRight2Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    right: 46%;
+  }
+}
+@-webkit-keyframes powerAdvanceRight2Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    right: 46%;
+  }
+}
+
+.powerAdvanceRight3 {
+  animation: powerAdvanceRight3 2s forwards;
+  -moz-animation: powerAdvanceRight3 2s forwards; /* Firefox */
+  -webkit-animation: powerAdvanceRight3 2s forwards; /* Safari and Chrome */
+
+  @include responsive(phone) {
+    animation: powerAdvanceRight3Phone 2s forwards;
+    -moz-animation: powerAdvanceRight3Phone 2s forwards; /* Firefox */
+    -webkit-animation: powerAdvanceRight3Phone 2s forwards; /* Safari and Chrome */
+  }
+}
+
+@keyframes powerAdvanceRight3 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    right: 80%;
+  }
+}
+@-moz-keyframes powerAdvanceRight3 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    right: 80%;
+  }
+}
+@-webkit-keyframes powerAdvanceRight3 {
+  from {
+  }
+  to {
+    width: 5.5vh;
+    bottom: 66.5%;
+    right: 80%;
+  }
+}
+
+@keyframes powerAdvanceRight3Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    right: 70%;
+  }
+}
+@-moz-keyframes powerAdvanceRight3Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    right: 70%;
+  }
+}
+@-webkit-keyframes powerAdvanceRight3Phone {
+  from {
+  }
+  to {
+    width: 4.5vh;
+    bottom: 67.5%;
+    right: 70%;
+  }
+}

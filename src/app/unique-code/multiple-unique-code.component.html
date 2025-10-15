@@ -1,0 +1,1105 @@
+<div class="multiple-unique-code-page">
+  <!-- <div class="coin-anim">
+			<div class="coin2" style="left:10%;">
+				<img class="move-down-slow" src="../../../assets/img/coins/coinsmall.gif" alt="">
+			</div>
+			<div class="coin1" style="left:20%;">
+				<img class="move-down-mid" src="../../../assets/img/coins/CoinB_small.gif" alt="">
+			</div>
+			<div class="coin2" style="left:30%;">
+				<img class="move-down-slow1" src="../../../assets/img/coins/CoinB_medium.gif" alt="">
+			</div>
+			<div class="coin2" style="left:40%;">
+				<img class="move-down-slow2" src="../../../assets/img/coins/CoinB_medium.gif" alt="">
+			</div>
+			<div class="coin3 float-right" style="left:70%;">
+				<img class="move-down" src="../../../assets/img/coins/CoinC_small.gif" alt="">
+			</div>
+			<div class="coin2" style="left:90%;">
+				<img class="move-down-slow3" src="../../../assets/img/coins/CoinB_medium.gif" alt="">
+			</div>
+		</div> -->
+  <!-- <div class="cloud-anim">
+			<div class="cloud1 desktop" data-type="cloudtype7" style="top: 4%;" data-speed="1"></div> -->
+  <!-- <div class="cloud" data-type="cloudtype2" style="top: 35%;" data-speed="2"></div> -->
+  <!-- <div class="cloud desktop" data-type="cloudtype1" style="top: 45%;" data-speed="3"></div>
+			<div class="cloud desktop" data-type="cloudtype3" style="top: 52%;" data-speed="4"></div>
+			<div class="cloud2 desktop" data-type="cloudtype5" style="top: 6%;" data-speed="5"></div> -->
+  <!-- <div class="cloud2 desktop" data-type="cloudtype4" style="top: 9%;" data-speed="6"></div> -->
+  <!-- <div class="cloud1" data-type="cloudtype6" style="top: 25%;" data-speed="7"></div> -->
+  <!-- <div class="cloud3 desktop" data-type="cloudtype8" style="top: 59%;" data-speed="8"></div>
+		</div> -->
+  <!-- <div class="app-content-wrapper m0">
+		</div> -->
+
+  <section class="container" *ngIf="!showSpentInput && !confirmAnotherCode">
+    <!-- <div class="divider-top-space"></div> -->
+    <div class="enter-code-container z-i5">
+      <div class="row text-left" *ngIf="multipleCode">
+        <div class="col-12">
+          <button
+            class="primarybtn btn4 brd-rad text-left"
+            (click)="goBacktoConfirmation()"
+          >
+            < Go Back
+          </button>
+        </div>
+      </div>
+      <!-- <div class="enter-code-img">
+						<div class="row">
+							<div class="col-12">
+								<img src="../../assets/img/enter-code-header.png" alt="enter-code-header" class="img-responsive">
+							</div>
+						</div>
+					</div> -->
+      <div class="row">
+        <div class="col-12">
+          <div class="enter-code-text">
+            Enter the 5 digit code that appears on your game card for your
+            chance to win.
+            <!-- Enter the lucky code in the number plate
+							<br>below to see if you are a winner! -->
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="nom-text">
+            Don’t have a game card? Take your receipts to Customer Service and
+            collect your game card to enter.
+            <!-- <small>${{ minispend }} -->
+            <!-- <a (click)="openModal(participat)">participating centre</a>. -->
+            <!-- </small> -->
+          </div>
+        </div>
+      </div>
+      <div class="code-container">
+        <div class="row">
+          <!-- <div class="col-1"></div> -->
+          <div class="col-12">
+            <div class="error-text" *ngIf="errorMsg.message">
+              {{ errorMsg.message }}
+            </div>
+          </div>
+        </div>
+        <div class="uniqueform-container">
+          <div class="row">
+            <!-- <div class="col-1"></div> -->
+            <div class="col-12">
+              <div class="unique-box">
+                <!-- <div class="unique-text">
+										YOUR UNIQUE CODE
+									</div> -->
+                <div class="code-pad">
+                  <div class="code-pad-item">
+                    <input
+                      type="text"
+                      id="code1"
+                      [(ngModel)]="code1"
+                      (keyup)="onKeyUp($event)"
+                      maxlength="5"
+                      size="5"
+                      appAutoFocus
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-1"></div> -->
+          </div>
+
+          <div class="row">
+            <div class="col-12 textalignment">
+              <button
+                class="primarybtn btn1 text-center"
+                (click)="onEnterCode()"
+                (keyup)="onKeyUp($event)"
+                [disabled]="buttonDisabled"
+              >
+                <img
+                  src="../../assets/img/loadingWheel.gif"
+                  alt=""
+                  [ngClass]="loadingStyle"
+                />
+                <!-- <span class="loading" [ngClass]="loadingStyle"></span> -->
+                NEXT
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-12 m0">
+				<div class="float-right close-home up-mb"> -->
+      <!-- <a href="/home" title="back to home"><img class="img-reponsive" src="../../assets/img/Close-Button.png" alt=""></a> -->
+      <!-- <button type="submit" (click)="backHome()">
+								<img class="img-reponsive" src="../../assets/img/Close-Button.png" alt="">
+							</button> -->
+      <!-- <input type="image" src="../../assets/img/Close-Button.png" alt="Back to Home" (click)="backHome()"
+						width="50"> -->
+      <!-- </div>
+			</div> -->
+    </div>
+    <div class="divider-bottom-space"></div>
+  </section>
+  <section class="container mtb2" *ngIf="!showSpentInput && confirmAnotherCode">
+    <!-- <div class="divider-top-space"></div> -->
+    <div class="enter-code-confirmation-container z-i5">
+      <div class="code-confirmation-container">
+        <div class="row">
+          <div class="col-12">
+            <div class="enter-code-text">
+              Do you have another game card to enter?
+            </div>
+          </div>
+        </div>
+        <div class="row"></div>
+        <div class="uniqueform-container">
+          <div class="row">
+            <div class="col-12">
+              <div class="unique-box-img">
+                <img src="../../assets/img/carboot/twocarplate.png" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 textalignment">
+              <button
+                class="fourthbtn btn3 btn-sm text-center"
+                (click)="onceAgainEnterCode()"
+                (keyup)="onKeyUp($event)"
+                [disabled]="buttonDisabled"
+              >
+                <img
+                  src="../../assets/img/loadingWheel.gif"
+                  alt=""
+                  [ngClass]="loadingStyle"
+                />
+                YES
+              </button>
+            </div>
+            <div class="col-6 textalignment">
+              <button
+                class="fourthbtn btn3 btn-sm text-center"
+                (click)="goToSpent()"
+                (keyup)="onKeyUp($event)"
+                [disabled]="buttonDisabled"
+              >
+                <img
+                  src="../../assets/img/loadingWheel.gif"
+                  alt=""
+                  [ngClass]="loadingStyle"
+                />
+                NO
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-12 m0">
+			<div class="float-right close-home up-mb">
+				<input type="image" src="../../assets/img/Close-Button.png" alt="Back to Home" (click)="backHome()"
+					width="50">
+			</div>
+		</div> -->
+    <div class="divider-bottom-space"></div>
+  </section>
+
+  <section class="container" *ngIf="showSpentInput && !confirmAnotherCode">
+    <div class="spent-form-container z-i5">
+      <!-- <div class="row">
+				<div class="col-12 textalignment plus">
+					<img src="../../assets/img/logo.png" alt="">
+				</div>
+			</div> -->
+      <div class="row">
+        <div class="col-12 textalignment">
+          <div class="title mb-4 mt-0 mt-lg-3">Almost done</div>
+        </div>
+      </div>
+      <div class="row" *ngIf="needStoreName">
+        <div class="col-12 textalignment">
+          <!-- <div class="subtitle">Please answer the final questions</div> -->
+          <div class="subtitle-2 mt-3 d-none d-lg-block">
+            <!-- To enter, simply spend ${{
+              this.campaignCenterService.minimumspend | number : "1.0-0"
+            }}
+            at participating retailers. Receipts can be combined. <br />
+            Spend must be made on the same day as entering. One entry per person
+            per day. Please retain receipts. -->
+
+            A minimum spend of ${{
+              this.campaignCenterService.minimumspend | number : "1.0-0"
+            }}
+            or more is required.<br />
+            Receipts cannot be combined. Receipts must be dated the same day as
+            entry. <br />
+            Purchases can only be made between 9am – 5pm.
+          </div>
+          <div class="subtitle-2 mt-3 d-block d-lg-none">
+            A minimum spend of ${{
+              this.campaignCenterService.minimumspend | number : "1.0-0"
+            }}
+            or more is required. Receipts cannot be combined. Receipts must be
+            dated the same day as entry. Purchases can only be made between 9am
+            – 5pm.
+          </div>
+          <!-- <div class="subtitle-3 mt-3 d-none d-lg-block">
+            Purchase must be made ON THE SAME DAY during the promotional period.
+            <br />
+            Please retain your receipt/s as proof of purchase.
+          </div>
+          <div class="subtitle-3 mt-3 d-block d-lg-none">
+            Purchase must be made ON THE SAME DAY during the promotional period.
+            Please retain your receipt/s as proof of purchase.
+          </div> -->
+        </div>
+      </div>
+
+      <div class="row" *ngIf="!needStoreName">
+        <div class="col-12 textalignment">
+          <div class="subtitle">
+            <strong
+              >Thanks for making a purchase at {{ this.outletName }}.
+            </strong>
+            <!-- at {{ this.centreName }}  -->
+            <br /><br />
+            Please retain your receipt(s) to claim your prize
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3" *ngIf="errorMsg.message">
+        <div class="col-12 col-lg-2"></div>
+        <div class="col-12 col-lg-8">
+          <div class="error-text mx-0">
+            {{ errorMsg.message }}
+          </div>
+        </div>
+        <div class="col-12 col-lg-2"></div>
+      </div>
+
+      <form
+        action=""
+        class="form-horizontal"
+        [formGroup]="spentForm"
+        autocomplete="off"
+      >
+        <div class="retailer-item enter-step1 mb-4 mt-5">
+          <div class="retailer-item-date">
+            <div class="row">
+              <div class="col-12 col-lg-2"></div>
+              <div class="col-12 col-lg-8" [ngClass]="purchaseDateStyle">
+                <label class="control-label register-label"
+                  >*Receipt Date:</label
+                >
+                <div class="input-calendar" *ngIf="!isMobile">
+                  <input
+                    type="text"
+                    class="form-control"
+                    [minDate]="minDate"
+                    [maxDate]="maxDate"
+                    [bsConfig]="{
+                      dateInputFormat: 'DD/MM/YYYY',
+                      showWeekNumbers: false,
+                      todayHighligh: true
+                    }"
+                    #dp="bsDatepicker"
+                    bsDatepicker
+                    formControlName="purchaseDate"
+                    placeholder=""
+                    autocomplete="off"
+                    required
+                    (ngModelChange)="onChangePurcharse($event)"
+                  />
+                  <label for="input-calendar" (click)="openDatepicker()">
+                    <img
+                      src="../../assets/img/icon-calendar.png"
+                      class="img-fluid"
+                    />
+                  </label>
+                </div>
+                <div class="input-calendar-mobile" *ngIf="isMobile">
+                  <input
+                    id="input-calendar-mobile"
+                    type="date"
+                    class="form-control"
+                    formControlName="purchaseDate"
+                    placeholder=""
+                    autocomplete="off"
+                    required
+                    (ngModelChange)="onChangePurcharse($event)"
+                  />
+                  <label for="input-calendar-mobile">
+                    <img
+                      src="../../assets/img/icon-calendar.png"
+                      class="img-fluid"
+                    />
+                  </label>
+                </div>
+              </div>
+              <div class="col-12 col-lg-2"></div>
+            </div>
+            <!-- <div class="row mt-3" *ngIf="showFormMultipleUniqueCode">
+              <div class="col-12 col-lg-2"></div>
+              <div class="col-12 col-lg-8" [ngClass]="localClubStyle">
+                <label class="control-label register-label"
+                  >*Select your Eastern Football Netball Club:</label
+                >
+                <select
+                  class="form-control"
+                  formControlName="localClub"
+                  required
+                  (ngModelChange)="onChangeLocalClub($event)"
+                >
+                  <option disabled selected value>Select club</option>
+                  <option
+                    *ngFor="let localClubName of localClubs"
+                    [value]="localClubName"
+                  >
+                    {{ localClubName }}
+                  </option>
+                </select>
+              </div>
+              <div class="col-12 col-lg-2"></div>
+            </div> -->
+          </div>
+        </div>
+
+        <div
+          class="enter-step2 mb-5"
+          formArrayName="spentretailer"
+          *ngIf="showFormMultipleUniqueCode"
+        >
+          <div
+            class="retailer-item"
+            *ngFor="
+              let item of spentForm.controls.spentretailer.controls;
+              let i = index
+            "
+            [formGroupName]="i"
+          >
+            <div class="retailer-item-label" id="retailer-item-label-{{ i }}">
+              <div class="row">
+                <div class="col-3">{{ item.controls.store.value }}</div>
+                <div class="col-2">${{ item.controls.spend.value }}</div>
+                <div class="col-3">
+                  {{
+                    this.datePipe.transform(
+                      item.controls.purchaseDate.value,
+                      "dd/MM/yyyy"
+                    )
+                  }}
+                </div>
+                <div
+                  class="col-4 d-flex align-items-center justify-content-end"
+                >
+                  <!-- <button class="btn-remove-retailer" (click)="editItem(i)">
+                    EDIT
+                  </button> -->
+                  <button
+                    class="btn-remove-retailer ml-1"
+                    (click)="removeItem(i)"
+                  >
+                    REMOVE
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="retailer-item-input" id="retailer-item-input-{{ i }}">
+              <div class="row mt-0">
+                <div class="col-12 col-lg-2"></div>
+                <div class="col-12 col-lg-8">
+                  <!-- <div class="col-9 col-lg-10"> -->
+                  <div class="row">
+                    <!-- <div class="col-12" [ngClass]="localClubStyles[i]">
+                      <div class="mb-2">Type in your nominated EFNL club</div>
+                      <label class="control-label register-label mt-1 mt-md-0"
+                        >*Select your Eastern Football Netball Club:</label
+                      >
+                      <section class="filter-wrapper">
+                        <div class="keyword-wrapper">
+                          <input
+                            type="text"
+                            class="form-control"
+                            formControlName="localClub"
+                            placeholder=""
+                            id="localClub"
+                            autocomplete="{{ acc }}"
+                            (keyup)="getLocalClub($event, i)"
+                            (focus)="getLocalClub($event, i)"
+                          />
+                          <ul
+                            class="filter-select"
+                            [ngClass]="displayStyle"
+                            *ngIf="localClubs.length > 0"
+                          >
+                            <li
+                              *ngFor="let localClub of localClubs"
+                              class="filter-select-list"
+                              (click)="selectLocalClub(localClub, i)"
+                            >
+                              <span class="tags">{{ localClub }}</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </section>
+                    </div> -->
+
+                    <!-- <div
+                      class="col-12"
+                      [ngClass]="localClubStyles[i]"
+                    >
+                      <label class="control-label register-label"
+                        >*Select your Eastern Football Netball Club:</label
+                      >
+                      <select
+                        class="form-control"
+                        formControlName="localClub"
+                      >
+                        <option disabled selected value>Select club</option>
+                        <option
+                          *ngFor="let localClubName of localClubs"
+                          [value]="localClubName"
+                        >
+                          {{ localClubName }}
+                        </option>
+                      </select>
+                    </div> -->
+
+                    <div
+                      class="col-12"
+                      [ngClass]="storeStyles[i]"
+                      *ngIf="needStoreName"
+                    >
+                      <label class="control-label register-label"
+                        >*Store where purchase was made:</label
+                      >
+                      <select
+                        class="form-control"
+                        formControlName="store"
+                        (change)="onChangeRetailer($event)"
+                      >
+                        <option disabled selected value>Select store</option>
+                        <option
+                          *ngFor="let retailer of retailersOfSelectedCenter"
+                          [value]="retailer.name"
+                          [attr.data-min-spend]="retailer.minSpend"
+                          [attr.data-max-spend]="retailer.maxSpend"
+                        >
+                          {{ retailer.name }}
+                        </option>
+                      </select>
+                      <!-- <section class="filter-wrapper">
+                        <div class="keyword-wrapper">
+                          <input
+                            type="text"
+                            class="form-control"
+                            formControlName="store"
+                            placeholder=""
+                            autocomplete="off"
+                            (keyup)="getStores($event, i)"
+                            required
+                            appAutoFocus
+                          />
+                          <ul
+                            class="filter-select"
+                            *ngIf="showStoreByKey == i && refStores.length > 0"
+                          >
+                            <li
+                              *ngFor="let store of refStores"
+                              class="filter-select-list"
+                            >
+                              <button
+                                class="tags"
+                                (click)="
+                                  fill(i, store.outlet_id, store.outlet_name)
+                                "
+                              >
+                                {{ store.outlet_name }}
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </section> -->
+                    </div>
+
+                    <!-- <div class="col-12" [ngClass]="purchaseDateStyles[i]">
+                      <label class="control-label register-label"
+                        >*Receipt Date:</label
+                      >
+                      <div class="input-calendar" *ngIf="!isMobile">
+                        <input
+                          *ngIf="!isMobile"
+                          type="text"
+                          class="form-control"
+                          [minDate]="minDate"
+                          [maxDate]="maxDate"
+                          [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"
+                          #dp="bsDatepicker"
+                          bsDatepicker
+                          formControlName="purchaseDate"
+                          placeholder="dd/mm/yyyy"
+                          autocomplete="off"
+                        />
+                        <label for="input-calendar">
+                          <img
+                            src="../../assets/img/icon-calendar.png"
+                            class="img-fluid"
+                          />
+                        </label>
+                      </div>
+                      <div class="input-calendar-mobile" *ngIf="isMobile">
+                        <input
+                          *ngIf="isMobile"
+                          type="date"
+                          class="form-control"
+                          formControlName="purchaseDate"
+                          placeholder="dd/mm/yyyy"
+                          autocomplete="off"
+                        />
+                        <label for="input-calendar">
+                          <img
+                            src="../../assets/img/icon-calendar.png"
+                            class="img-fluid"
+                          />
+                        </label>
+                      </div>
+                    </div> -->
+
+                    <div class="col-12 mt-2" [ngClass]="spendStyles[i]">
+                      <label class="control-label register-label">
+                        *Amount spent:
+                        <!-- <small>(Minimum ${{ minispend }} spend. Please retain receipts for proof of purchase.)</small> -->
+                        <!-- <br>
+      								<small>Minimum $30 spend. Please retain receipts for proof of purchase. <br> Receipts must be shown at Customer Service to claim your instant prize.</small> -->
+                      </label>
+                      <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        <input
+                          type="number"
+                          class="form-control amount-spent"
+                          formControlName="spend"
+                          placeholder=""
+                          autocomplete="off"
+                          onkeyup="if (/^(\d+\.\d{2})\d+$/g.test(this.value)) this.value = this.value.replace(/^(\d+\.\d{2})\d+$/g,'')"
+                        />
+                      </div>
+                      <!-- <select class="form-control" formControlName="spend">
+      								<option disabled selected value>Please select</option>
+      								<option value="< $5">< $5</option>
+      								<option value="$5 - $10">$5 - $10</option>
+      								<option value="$10 - $15">$10 - $15</option>
+      								<option value="> $15"> > $15</option>
+      							</select> -->
+                    </div>
+
+                    <!-- NOT PHOTO -->
+                    <!-- <small class="col-12 mt-3 mb-2" [ngClass]="photoStyles[i]">
+                      Please keep a copy of your receipt for the competition
+                      duration as proof of purchase.
+                    </small> -->
+                    <div class="col-12 mt-2" [ngClass]="photoStyles[i]">
+                      <input type="hidden" formControlName="photobase64" />
+                      <div class="takephoto">
+                        <label for="file-photo-{{ i }}">
+                          <img
+                            src="../../assets/img/takephoto.png"
+                            class="img-fluid"
+                          />
+                        </label>
+
+                        <input
+                          id="file-photo-{{ i }}"
+                          type="file"
+                          formControlName="photo"
+                          accept=".jpg, .jpeg, .png"
+                          (change)="changePhoto($event, i)"
+                        />
+
+                        <div
+                          class="text mt-3 d-block d-sm-none"
+                          [ngClass]="photoStyles[i]"
+                        >
+                          *Take a photo or select an image of your receipt
+                        </div>
+                        <div
+                          class="text mt-3 d-none d-sm-block"
+                          [ngClass]="photoStyles[i]"
+                        >
+                          *Take a photo or select an <br />
+                          image of your receipt
+                        </div>
+                        <img
+                          src="{{ item.controls.photobase64.value }}"
+                          class="img-fluid mt-3"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- <div
+                      *ngIf="isParadise"
+                      class="col-12 mt-2"
+                      [ngClass]="paradiseStyles[i]"
+                    >
+                      <label class="control-label mt-4"
+                        >*Where would you like to Party in Paradise? (select
+                        one)</label
+                      >
+                      <div>
+                        <label class="radio-inline">
+                          <input
+                            type="radio"
+                            name="paradise"
+                            class="option-input radio"
+                            (change)="onOutputParadise($event)"
+                            formControlName="paradise"
+                            value="Timezone"
+                            checked="checked"
+                          />
+                          Timezone
+                        </label>
+                        <label class="radio-inline">
+                          <input
+                            type="radio"
+                            name="paradise"
+                            class="option-input radio"
+                            (change)="onOutputParadise($event)"
+                            formControlName="paradise"
+                            value="MANIAX Axe Throwing"
+                          />
+                          MANIAX Axe Throwing
+                        </label>
+                        <label class="radio-inline">
+                          <input
+                            type="radio"
+                            name="paradise"
+                            class="option-input radio"
+                            (change)="onOutputParadise($event)"
+                            formControlName="paradise"
+                            value="Nahm Talay Thai"
+                          />
+                          Nahm Talay Thai
+                        </label>
+                        <label class="radio-inline">
+                          <input
+                            type="radio"
+                            name="paradise"
+                            class="option-input radio"
+                            (change)="onOutputParadise($event)"
+                            formControlName="paradise"
+                            value="Surfers Beer Garden"
+                          />
+                          Surfers Beer Garden
+                        </label>
+                        <label class="radio-inline">
+                          <input
+                            type="radio"
+                            name="paradise"
+                            class="option-input radio"
+                            (change)="onOutputParadise($event)"
+                            formControlName="paradise"
+                            value="Wahlburgers"
+                          />
+                          Wahlburgers
+                        </label>
+                        <label class="radio-inline">
+                          <input
+                            type="radio"
+                            name="paradise"
+                            class="option-input radio"
+                            (change)="onOutputParadise($event)"
+                            formControlName="paradise"
+                            value="Padlock’d Escape Rooms"
+                          />
+                          Padlock’d Escape Rooms
+                        </label>
+                        <label class="radio-inline">
+                          <input
+                            type="radio"
+                            name="paradise"
+                            class="option-input radio"
+                            (change)="onOutputParadise($event)"
+                            formControlName="paradise"
+                            value="Celebrity Ink"
+                          />Celebrity Ink</label
+                        >
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="col-12 col-lg-2"></div>
+
+                <!-- <div
+                  class="col-3 col-lg-2 d-flex align-items-center justify-content-end"
+                >
+                  <button class="btn-remove-retailer" (click)="removeItem(i)">
+                    REMOVE
+                  </button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row enter-step2" *ngIf="showFormMultipleUniqueCode">
+          <!-- <div
+          class="row enter-step2"
+          *ngIf="
+            showFormMultipleUniqueCode &&
+            spentForm.controls.spentretailer.controls.length <= 2
+          "
+        > -->
+          <!-- <div class="col-12 text-center">
+            <button
+              type="submit"
+              class="secondarybtn btn1"
+              [disabled]="buttonDisabled"
+              (click)="addItems()"
+            >
+              + Another Spend
+            </button>
+          </div> -->
+        </div>
+        <!-- <div class="row mb-3" *ngIf="showFormMultipleUniqueCode">
+          <div class="col-12 text-center">
+            <button
+              type="button"
+              class="fourthbtn btn5"
+              [disabled]="buttonDisabled"
+              (click)="openModal(paradise, 'lg')"
+            >
+              Click here to view detailed info on our prize options.
+            </button>
+          </div>
+        </div> -->
+        <!-- <div class="col-12 text-center">
+						<button type="submit" class="secondarybtn btn5" [disabled]="buttonDisabled"
+							(click)="removeItems()">+
+							REMOVE RECEIPT</button>
+					</div> -->
+        <!-- </div> -->
+        <div class="row enter-step2">
+          <div class="col-12 textalignment">
+            <button
+              type="submit"
+              class="primarybtn btn1"
+              [disabled]="buttonDisabled"
+              (click)="onSpent(this.campaignCenterService.email)"
+            >
+              <!-- (this.campaignCenterService.email)" -->
+              <img
+                src="../../assets/img/loadingWheel.gif"
+                alt=""
+                [ngClass]="loadingStyle"
+              />
+              <!-- <span class="loading" [ngClass]="loadingStyle"></span> -->
+              <span *ngIf="showFormMultipleUniqueCode">
+                SUBMIT PURCHASE INFORMATION >
+              </span>
+              <span *ngIf="!showFormMultipleUniqueCode"
+                >SUBMIT PURCHASE INFORMATION ></span
+              >
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- <div class="col-12">
+			<div class="float-right close-home up-mb"> -->
+    <!-- <a href="/home" title="back to home"><img class="img-reponsive" src="../../assets/img/Close-Button.png" alt=""></a> -->
+    <!-- <button type="submit" (click)="backHome()">
+							<img class="img-reponsive" src="../../assets/img/Close-Button.png" alt="">
+						</button> -->
+    <!-- <input type="image" src="../../assets/img/Close-Button.png" alt="Back to Home" (click)="backHome()"
+					width="50"> -->
+    <!-- </div>
+		</div> -->
+    <div class="divider-bottom-space"></div>
+  </section>
+
+  <ng-template #templateInvalidCode>
+    <div class="modal-header">
+      <button
+        type="button"
+        class="close float-right"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+      >
+        <img src="../../assets/img/close-modal.png" class="modal-close" />
+      </button>
+    </div>
+    <div class="modal-body modal-alert">
+      <div class="oops">Oops...</div>
+      <div class="mt-4">
+        <small
+          >Looks like you have entered an invalid code. Please try another
+          code.</small
+        >
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #customError>
+    <div class="modal-header">
+      <button
+        type="button"
+        class="close float-right"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+      >
+        <img src="../../assets/img/close-modal.png" class="modal-close" />
+      </button>
+    </div>
+    <div class="modal-body modal-alert">
+      <div class="oops">Oops...</div>
+      <div class="mt-4">
+        <small>
+          A minimum spend of ${{ minispend }} is required at this store.
+          <!-- Your purchase is less than the ${{ minispend }} minimum spend required
+          for entry. -->
+        </small>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #customError1>
+    <div class="modal-header">
+      <button
+        type="button"
+        class="close float-right"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+      >
+        <img src="../../assets/img/close-modal.png" class="modal-close" />
+      </button>
+    </div>
+    <div class="modal-body modal-alert">
+      <div class="oops">Oops...</div>
+      <div class="mt-4">
+        <small>
+          Your spend looks rather high, spend must not exceed ${{ maxspend }}.
+          <!-- Your spend looks rather high, please enter the correct spend and
+          retain your receipt to claim your prize. Spend must not exceed $9,999. -->
+        </small>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #customErrorMinMax>
+    <div class="modal-header">
+      <button
+        type="button"
+        class="close float-right"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+      >
+        <img src="../../assets/img/close-modal.png" class="modal-close" />
+      </button>
+    </div>
+    <div class="modal-body modal-alert">
+      <div class="oops">Oops...</div>
+      <div class="mt-4">
+        <small>
+          There is an issue with either the minimum or maximum spending limit.
+          Please review and verify it again.
+        </small>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #templateAlreadyEntered>
+    <div class="modal-header">
+      <button
+        type="button"
+        class="close float-right"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+      >
+        <img src="../../assets/img/close-modal.png" class="modal-close" />
+      </button>
+    </div>
+    <div class="modal-body modal-alert">
+      <div class="oops">Oops...</div>
+      <div class="mt-4">
+        <small>
+          <!-- Looks like you have already claimed a $20 Gift Card today. Come back
+          tomorrow. -->
+          Only one entry permitted per day. Please try again tomorrow.
+        </small>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #serverErrorCode>
+    <div class="modal-header">
+      <button
+        type="button"
+        class="close float-right"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+      >
+        <img src="../../assets/img/close-modal.png" class="modal-close" />
+      </button>
+    </div>
+    <div class="modal-body modal-alert">
+      <div class="oops">Oops...</div>
+      <div class="mt-4">
+        <small>We seem to be having an issue. Please try again later.</small>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #templateEntryInvalid>
+    <div class="modal-header">
+      <button
+        type="button"
+        class="close float-right"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+      >
+        <img src="../../assets/img/close-modal.png" class="modal-close" />
+      </button>
+    </div>
+    <div class="modal-body modal-alert">
+      <div class="oops">Oops...</div>
+      <div class="mt-4">
+        <small>Looks like you have entered an Invalid entry</small>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<!-- <div class="ribbon">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<strong>Don’t have an entry form?</strong> Collect one when you make a purchase at any
+					<a (click)="openModal(participat)">participating store</a>.
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+<ng-template #participating>
+  <div class="modal-header">
+    <div class="title-participating">PARTICIPATING RETAILERS</div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="body-participating">
+      <div
+        class="row"
+        *ngFor="let centers of this.campaignCenterService.centers"
+      >
+        <div class="col-6" *ngFor="let retailers of centers.retailers">
+          {{ retailers.name }}
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="mr-btm">
+            <strong>New South Wales</strong>
+            <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+              <a href="{{ Lscenters.website }}" target="_blank">
+                <div *ngIf="Lscenters.state === 'NSW'">{{ Lscenters.name }}</div>
+              </a>
+            </div>
+          </div>
+          <div class="mr-btm">
+            <strong>Queensland</strong>
+            <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+              <a href="{{ Lscenters.website }}" target="_blank">
+                <div *ngIf="Lscenters.state === 'QLD'">{{ Lscenters.name }}</div>
+              </a>
+            </div>
+          </div>
+          <div class="mr-btm">
+            <strong>South Australia</strong>
+            <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+              <a href="{{ Lscenters.website }}" target="_blank">
+                <div *ngIf="Lscenters.state === 'SA'">{{ Lscenters.name }}</div>
+              </a>
+            </div>
+          </div>
+          <div class="mr-btm">
+            <strong>Tasmania</strong>
+            <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+              <a href="{{ Lscenters.website }}" target="_blank">
+                <div *ngIf="Lscenters.state === 'TAS'">{{ Lscenters.name }}</div>
+              </a>
+            </div>
+          </div>
+          <div class="mr-btm">
+            <strong>Victoria</strong>
+            <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+              <a href="{{ Lscenters.website }}" target="_blank">
+                <div *ngIf="Lscenters.state === 'VIC'">{{ Lscenters.name }}</div>
+              </a>
+            </div>
+          </div>
+          <div class="mr-btm">
+            <strong>Western Australia</strong>
+            <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+              <a href="{{ Lscenters.website }}" target="_blank">
+                <div *ngIf="Lscenters.state === 'WA'">{{ Lscenters.name }}</div>
+              </a>
+            </div>
+          </div> -->
+  </div>
+</ng-template>
+
+<ng-template #paradise>
+  <div class="modal-header tc">
+    <div class="row">
+      <div class="col-12 text-center modal-adj-head">
+        <div class="mt-3 mt-md-2">
+          <!-- <strong>Prize Details</strong> -->
+        </div>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body modal-paradise">
+    <div class="title mb-4">Prize Details</div>
+    <div class="content">
+      <div><strong>Timezone</strong> – Party for 10 valued at $1,500</div>
+      <div>
+        <strong>MANIAX Axe Throwing</strong> – Party for 10 valued at $700
+      </div>
+      <div>
+        <strong>Nahm Talay Thai</strong> – Dining experience for 10 valued at
+        $1,500
+      </div>
+      <div>
+        <strong>Surfers Beer Garden</strong> – Food and beverage package for 10
+        valued at $1,500
+      </div>
+      <div>
+        <strong>Wahlburgers</strong> – Burger bash and drinks for 10 valued at
+        $500
+      </div>
+      <div>
+        <strong>Padlock’d Escape Rooms</strong> – Experience for 12 valued at
+        $540
+      </div>
+      <div>
+        <strong>Celebrity Ink</strong> – VIP After-Hours Ink Party valued at
+        $2,500
+      </div>
+    </div>
+  </div>
+</ng-template>

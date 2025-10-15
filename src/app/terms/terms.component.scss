@@ -1,0 +1,65 @@
+@import "../../variable.scss";
+
+.terms-page {
+  overflow-x: hidden;
+  font-size: 0.8rem !important;
+  line-height: 1.4rem !important;
+  h1 {
+    color: #ff8d8b;
+  }
+  p,
+  span,
+  small,
+  li,
+  ul,
+  ol,
+  table,
+  th,
+  td,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 0.9rem !important;
+    line-height: 1.5rem !important;
+    font-family: $brand-font-family-1 !important;
+  }
+  strong {
+    font-size: 0.9rem !important;
+    line-height: 1.5rem !important;
+    font-family: $brand-font-family-7 !important;
+  }
+  p {
+    line-height: 1.4rem !important;
+    @include responsive(phone) {
+      line-height: 1.2rem !important;
+    }
+  }
+  a {
+    font-size: 0.9rem !important;
+    line-height: 1.5rem !important;
+    word-break: break-all;
+  }
+  .table-container {
+    max-width: 100%;
+    overflow-x: auto;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      @include responsive(phone) {
+        width: $tablet;
+      }
+    }
+    th,
+    td {
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+    th {
+      text-align: left;
+      background-color: #f2f2f2;
+    }
+  }
+}

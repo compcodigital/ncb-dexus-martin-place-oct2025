@@ -1,0 +1,229 @@
+@import "../../../variable.scss";
+
+$wDeskt: 800px;
+$hDeskt: 675px;
+$wTablt: 560px;
+$hTablt: 675px;
+$wPhone: 300px;
+$hPhone: 435px;
+
+.thankyou-page {
+  min-height: 600px;
+  height: 87vh;
+
+  .secondarybtn {
+    @include responsive(phone) {
+      font-size: 12px!important;
+    }
+  }
+
+  .thankyou-container {
+    text-align: center;
+    width: $wDeskt;
+    height: $hDeskt;
+    margin: 0.5em auto 0.5em;
+    letter-spacing: -0.4%;
+    position: relative;
+    // border: 10px solid #ffffff;
+    @include responsive(pc) {
+    }
+    @include responsive(tablet) {
+      width: $wTablt;
+      height: $hTablt;
+    }
+    @include responsive(phone) {
+      width: $wPhone;
+      height: $hPhone;
+    }
+    @include responsive(smp) {
+    }
+    .image-scratch {
+      display: none;
+      width: calc(#{$wDeskt} - 0px);
+      height: calc(#{$hDeskt} - 0px);
+      @include responsive(pc) {
+      }
+      @include responsive(tablet) {
+        width: calc(#{$wTablt} - 0px);
+        height: calc(#{$hTablt} - 0px);
+      }
+      @include responsive(phone) {
+        width: calc(#{$wPhone} - 0px);
+        height: calc(#{$hPhone} - 0px);
+      }
+      @include responsive(smp) {
+      }
+    }
+    .thankyou-bg {
+      width: calc(#{$wDeskt} - 0px);
+      height: calc(#{$hDeskt} - 0px);
+      background-image: url("/assets/img/scratch/scratchDesktop.jpg");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      @include responsive(pc) {
+      }
+      @include responsive(tablet) {
+        width: calc(#{$wTablt} - 0px);
+        height: calc(#{$hTablt} - 0px);
+        background-image: url("/assets/img/scratch/scratchPhone.png");
+      }
+      @include responsive(phone) {
+        width: calc(#{$wPhone} - 0px);
+        height: calc(#{$hPhone} - 0px);
+        background-image: url("/assets/img/scratch/scratchPhone.jpg");
+      }
+      @include responsive(smp) {
+      }
+      .load-style {
+        display: none;
+        height: 100%;
+      }
+      .thankyou-ctn {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: $white;
+      }
+    }
+    hr {
+      margin: 1vh auto;
+    }
+    .canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    .thankyou-head {
+      font-family: $brand-font-family-1;
+      height: auto;
+      text-align: center;
+      color: $brand-color;
+      margin: 2vh auto 10px;
+      font-size: 50px;
+      line-height: 50px;
+      font-weight: 700;
+      cursor: none;
+      img {
+        width: 80%;
+        margin: 0 $marginscreenalignment;
+      }
+    }
+
+    .thankyou-text {
+      width: 95%;
+      margin: 2vh $marginscreenalignment;
+      line-height: 32px;
+      font-size: 28px;
+      color: $black;
+    }
+
+    .thankyou-text-1 {
+      margin: 2vh $marginscreenalignment;
+      line-height: 32px;
+      font-size: 28px;
+      color: $black;
+    }
+
+    a {
+      color: #ffffff;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+
+    .fx-thank {
+      width: 70%;
+      margin: 0 auto;
+      @include responsive(phone) {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .thankyou-page {
+    .thankyou-container {
+      hr {
+        border-top: 5px solid #636466;
+        margin: 1vh auto;
+        width: 5vw;
+        text-align: center;
+      }
+      .thankyou-head {
+        margin: 2vh $marginscreenalignment 1vh;
+      }
+      .thankyou-text {
+        margin: 1vh $marginscreenalignment;
+        line-height: 32px;
+        font-size: 28px;
+      }
+      .thankyou-text-1 {
+        margin: 1vh $marginscreenalignment;
+        line-height: 25px;
+        font-size: 21px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+}
+
+/* tablet and phone*/
+@media only screen and (max-width: 767px) {
+  .thankyou-page {
+    height: 87vh;
+    min-height: 460px;
+    .thankyou-container {
+      #js-container {
+        position: relative;
+      }
+      .thankyou-head {
+        height: auto;
+        // min-height: 50px;
+        text-align: center;
+        margin: 10px $marginscreenalignment;
+        font-size: 25px;
+        line-height: 25px;
+      }
+      .h82 {
+        height: 40px;
+        margin-bottom: 5px;
+      }
+      .thankyou-text {
+        width: 98%;
+        margin: 1vh $marginscreenalignment;
+        line-height: 21px;
+        font-size: 18px;
+      }
+      .thankyou-text-1 {
+        // width: 98%;
+        margin: 1vh $marginscreenalignment;
+        line-height: 18px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 576px) {
+  .thankyou-page {
+    height: 50vh;//73vh
+  }
+
+  .secondarybtn {
+    font-size: 12px;
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+}

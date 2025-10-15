@@ -1,0 +1,198 @@
+<div class="welcome-page">
+  <div class="row mt-5">
+    <div class="col-lg-4 col-md-3 col-sm-2 col-12"></div>
+
+    <div class="col-lg-4 col-md-6 col-sm-8 col-12">
+      <div class="container-fluid">
+        
+        <form
+          class="form-horizontal"
+          [formGroup]="welcomeForm"
+          (ngSubmit)="onSubmit()"
+          autocomplete="{{ acc }}"
+        >
+          <div class="logotype mt-5 text-center">
+            <img
+              src="../../assets/img/logo-jackdaniels.png"
+              class="img-fluid"
+            />
+          </div>
+          <div class="title mt-2 text-center">
+            ENTER YOUR BIRTHDATE<br />
+            BELOW TO BEGIN
+          </div>
+
+          <div
+            *ngIf="errorMsg.message"
+            class="error-text mt-3 d-flex justify-content-center"
+          >
+            {{ errorMsg.message }}
+          </div>
+
+          <div class="dateofbirth mt-5">
+            <div [ngClass]="birthdateddStyle" *ngIf="isBirthdatedd">
+              <input
+                type="number"
+                class="form-control"
+                formControlName="birthdatedd"
+                placeholder="DD"
+                autocomplete="{{ acc }}"
+                appAutoFocus
+                maxlength="2"
+                (keyup)="keyupbirthdatedd($event)"
+                (keypress)="validateOnlyNumeric($event, 'dd')"
+                id="focusbirthdatedd"
+              />
+            </div>
+            <div [ngClass]="birthdatemmStyle" *ngIf="isBirthdatemm">
+              <input
+                type="number"
+                class="form-control"
+                formControlName="birthdatemm"
+                placeholder="MM"
+                autocomplete="{{ acc }}"
+                appAutoFocus
+                maxlength="2"
+                (keyup)="keyupbirthdatemm($event)"
+                (keypress)="validateOnlyNumeric($event, 'mm')"
+                id="focusbirthdatemm"
+              />
+            </div>
+            <div [ngClass]="birthdateyyStyle" *ngIf="isBirthdateyy">
+              <input
+                type="number"
+                class="form-control"
+                formControlName="birthdateyy"
+                placeholder="YYYY"
+                autocomplete="{{ acc }}"
+                appAutoFocus
+                maxlength="4"
+                (keypress)="validateOnlyNumeric($event, 'yyyy')"
+                id="focusbirthdateyy"
+              />
+            </div>
+          </div>          
+          <div class="description mt-5 text-center">
+            This site uses cookies.
+            <a
+              href="https://legal.brown-forman.com/cookie-policy/english"
+              target="_blank"
+            >
+              Cookie Policy</a
+            >.<br />
+            I agree to the
+            <a
+              href="https://legal.brown-forman.com/terms-of-use/english"
+              target="_blank"
+              >terms of use</a
+            >, and the
+            <a
+              href="https://legal.brown-forman.com/privacy-policy/english"
+              target="_blank"
+              >privacy policy</a
+            >.<br />
+            This information will not be used for marketing purposes.
+          </div>
+          <div class="enter mt-5 text-center">
+            <button
+              type="submit"
+              class="primarybtn btn1"
+              [disabled]="buttonDisabled"
+            >
+              <img
+                src="../../assets/img/loadingWheel.gif"
+                alt=""
+                [ngClass]="loadingStyle"
+              />
+              ENTER
+            </button>
+          </div>
+        </form>
+
+        <div class="country mt-3 mb-5">
+          <div class="row">
+            <div class="col-12">
+              <label class="control-label">Country</label>
+              <div>
+                <div ngbDropdown class="select-country">
+                  <button ngbDropdownToggle class="select-country-title">
+                    <div class="country-name">
+                      <img
+                        src="../../assets/img/{{
+                          this.countryIcon ? this.countryIcon : 'australia.png'
+                        }}"
+                      />
+                      {{ this.countryName ? this.countryName : "Australia" }}
+                    </div>
+                  </button>
+                  <div
+                    ngbDropdownMenu
+                    aria-labelledby=""
+                    class="select-country-menu"
+                  >
+                    <div
+                      ngbDropdownItem
+                      class="select-country-item"
+                      *ngFor="let country of countries"
+                      (click)="
+                        selectCountry(
+                          country.key,
+                          country.name,
+                          country.icon,
+                          country.catg
+                        )
+                      "
+                    >
+                      <img src="../../assets/img/{{ country.icon }}" />
+                      {{ country.name }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-3 col-sm-2 col-12"></div>
+  </div>
+</div>
+
+<ng-template #verifyAgeTemplate>
+  <div class="modal-header">
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body modal-alert">
+    <div class="oops">Oops...</div>
+    <div class="mt-4">
+      <small>You don't have of legal drinking age taking alcohol.</small>
+    </div>
+  </div>
+</ng-template>
+<ng-template #serverErrorCode>
+  <div class="modal-header">
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body modal-alert">
+    <div class="oops">Oops...</div>
+    <div class="mt-4">
+      <small>We seem to be having an issue. Please try again later.</small>
+    </div>
+  </div>
+</ng-template>

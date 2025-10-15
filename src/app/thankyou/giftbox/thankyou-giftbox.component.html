@@ -1,0 +1,66 @@
+<div class="container">
+  
+<div class="thankyou-gift-page">
+  <section class="container-fluid">
+    <div class="boxlid" [ngClass]="giftLidStyle">
+      <div class="fly" [ngClass]="clickStyle">
+        <div id="flip">
+          <img class="closeit" id="lid" src="./assets/img/giftbox/gift/giftboxtop-red-24.png" alt="giftbox">
+        </div>
+      </div>
+      <div [ngClass]="click1Style">
+        <div id="flip">
+          <img class="closeit" [ngClass]="backStyle" src="./assets/img/giftbox/transparent.png" alt="giftbox">
+        </div>
+      </div>
+    </div>
+    <div id="giftbox" (click)="opengift()" class="giftbox" [ngClass]="giftStyle">
+      <div class="letter" #letter>
+        <div class="thankyou-gift-container paper" id="paper">
+          <div class="row">
+            <div class="col-12">
+              <div class="thankyou-head">
+                Better Luck Next Time!
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="thankyou-text">
+                You have been entered into the draw to win a $1000 Karingal Hub Gift Card.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center">
+              <div class="primarybtn btn3" (click)="onDone()">
+                DONE
+              </div>
+            </div>
+          </div>
+          <div class="row" [ngClass]="flipStyle">
+            <div class="col-12 text-center">
+              <div class="fourthbtn btn2" (click)="anotherCode()">
+                ENTER ANOTHER CODE
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box" [ngClass]="boxStyle">
+        <img class="desktop z-20 relative" src="./assets/img/giftbox/gift/giftboxdesktop.png" alt="giftbox">
+        <img class="mobile z-20 relative" src="./assets/img/giftbox/gift/giftboxmobile3.png" alt="giftbox">
+      </div>
+      <div class="bottom-height"></div>
+    </div><!-- End #giftbox -->
+    <div class="tap">
+      <div class="row ">
+        <div class="col-12 text-center">
+          <div class="primarybtn btn2" (click)="opengift()" [ngClass]="boxStyleBtn">
+            TAP TO OPEN
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
