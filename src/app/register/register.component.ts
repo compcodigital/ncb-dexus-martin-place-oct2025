@@ -749,7 +749,7 @@ export class RegisterComponent implements OnInit {
       this.errorMsg.message = "";
       this.loadingStyle = "displaynone";
       this.errorMsg.message +=
-        "\nAll fields marked with an asterisk (*) are required.";
+        "\nPlease complete all required fields marked with an asterisk (*).";
 
       if (this.isCentre) {
         if (this.registerForm.controls.center.status === "INVALID") {
@@ -764,7 +764,7 @@ export class RegisterComponent implements OnInit {
       if (this.isFn) {
         if (this.registerForm.controls.firstname.status === "INVALID") {
           this.errorMsg.valid = false;
-          this.errorMsg.message += "\nWe need your first name.";
+          this.errorMsg.message += "\nFirst name is required.";
           this.errorMsg.type = "firstname";
           this.fnStyle = "error-msg";
         } else {
@@ -774,7 +774,7 @@ export class RegisterComponent implements OnInit {
       if (this.isLn) {
         if (this.registerForm.controls.lastname.status === "INVALID") {
           this.errorMsg.valid = false;
-          this.errorMsg.message += "\nWe need your last name.";
+          this.errorMsg.message += "\nLast name is required.";
           this.errorMsg.type = "lastname";
           this.lnStyle = "error-msg";
         } else {
@@ -879,7 +879,7 @@ export class RegisterComponent implements OnInit {
       if (this.isSuburb) {
         if (this.registerForm.controls.suburb.status === "INVALID") {
           this.errorMsg.valid = false;
-          this.errorMsg.message += "\nWe need your Suburb.";
+          this.errorMsg.message += "\nSuburb is required.";
           this.errorMsg.type = "suburb";
           this.suburbStyle = "error-msg";
         } else {
@@ -900,7 +900,7 @@ export class RegisterComponent implements OnInit {
       if (this.isPostcode) {
         if (this.registerForm.controls.postcode.status === "INVALID") {
           // this.errorMsg.valid = false;
-          this.errorMsg.message += "\nPlease enter a valid postcode.";
+          this.errorMsg.message += "\nEnter a valid postcode.";
           // this.errorMsg.type = 'postcode';
           // this.postcodeStyle = 'error-msg';
 
@@ -979,7 +979,7 @@ export class RegisterComponent implements OnInit {
         ) {
           this.errorMsg.valid = false;
           this.errorMsg.message +=
-            "\nYou must agree with the Terms & Conditions to enter.";
+            "\nYou must accept the Terms & Conditions to continue.";
           this.errorMsg.type = "termsConditions";
           this.termStyle = "error-msg";
         } else {
