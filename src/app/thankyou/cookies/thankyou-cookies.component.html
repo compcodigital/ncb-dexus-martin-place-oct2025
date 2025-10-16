@@ -27,10 +27,10 @@
   </div>
   <div class="thankyou-container" [ngClass]="displayStyle">
     <section class="container">
-      <div *ngIf="giftsExhausted">
+      <div *ngIf="!giftsExhausted">
         <div class="thankyou-head mt-4">
-          Thank you for entering the Quay Quarter Spend $10. Get $10. promotion.
-          The prize pool for today has been exhausted.
+          Thank you for entering the 25 Martin Place Gift Card Giveaway
+          promotion. The prize pool for today has been exhausted.
         </div>
         <div class="thankyou-text mt-4">
           Please check back on the next available entry day within the
@@ -42,7 +42,7 @@
         </div>
       </div>
 
-      <div *ngIf="!giftsExhausted">
+      <div *ngIf="giftsExhausted">
         <div class="thankyou-text mt-4">
           Looks like you've already won during this promotional week.
           <br /><br />

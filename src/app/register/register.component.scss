@@ -101,11 +101,11 @@
       line-height: 40px;
       text-align: center;
       padding: 4rem 0rem 1rem;
-      color: $brand-color-3;
+      // color: $brand-color-3;
       @include responsive(phone) {
         font-size: 1.3rem;
         line-height: 24px;
-        padding: 2rem 0rem 2rem;
+        padding: 2rem 0rem 0rem;
       }
     }
     .required {
@@ -203,7 +203,8 @@
     }
 
     .register-form-container {
-      font-family: $brand-font-family-2;
+      font-family: $brand-font-family-8;
+
       form {
         width: 100%;
 
@@ -362,18 +363,19 @@
       margin: 10px $marginscreenalignment;
       font-size: 1rem;
       line-height: 1em;
-      font-family: $brand-font-family-2;
+
       .content {
         .title,
         .value {
           display: inline-block;
-          color: $brand-color;
+          color: $brand-color-2;
+          font-family: $brand-font-family-8;
         }
         .title {
           width: 50%;
           text-transform: uppercase;
-          font-family: $brand-font-family-5;
-          font-weight: bold;
+          // font-family: $brand-font-family-5;
+          // font-weight: bold;
         }
       }
       @include responsive(tablet) {
@@ -420,6 +422,7 @@
   }
   .text {
     width: calc(100% - 48px);
+    font-family: $brand-font-family-8;
   }
   span {
     font-size: 1rem;
@@ -442,7 +445,7 @@
     width: 30px;
 
     &:after {
-      border: 3px solid $brand-color;
+      border: 3px solid $brand-color-2;
       border-top: none;
       border-right: none;
       content: "";
@@ -790,3 +793,7 @@
 //     overflow-x: hidden;
 //   }
 // }
+
+.fx-small {
+  font-family: $brand-font-family-8;
+}

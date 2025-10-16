@@ -133,6 +133,7 @@
     label {
       font-weight: 500;
       text-align: left;
+      font-family: $brand-font-family-8;
     }
     .plus {
       font-family: $brand-font-family-1;
@@ -159,7 +160,7 @@
     .title {
       font-size: 2rem;
       line-height: 2.5rem;
-      color: $brand-color-3;
+      color: $brand-color-2;
       font-weight: bold;
       font-family: $brand-font-family-5;
       @include responsive(phone) {
@@ -178,6 +179,8 @@
     .subtitle-2 {
       font-size: 1.1rem;
       line-height: 1.7rem;
+      font-family: $brand-font-family-8;
+
       @include responsive(phone) {
         font-size: 1rem;
         line-height: 1.7rem;
@@ -367,8 +370,7 @@
     .takephoto {
       padding: 30px;
       text-align: center;
-      color: $white;
-      border: 2px dashed $white;
+      border: 2px dashed #80c9ff;
       label {
         margin: 0;
         padding: 0;

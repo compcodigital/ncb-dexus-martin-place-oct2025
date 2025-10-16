@@ -1295,8 +1295,8 @@ ul.active li {
   background-color: $primarybtn;
   text-align: center;
   color: $primarybtn-color;
-  font-family: $brand-font-family-5;
-  font-weight: bold;
+  font-family: $brand-font-family-8;
+  // font-weight: bold;
 }
 
 .primarybtn:hover,
@@ -1310,8 +1310,8 @@ ul.active li {
 .secondarybtn:link {
   background-color: $secondarybtn;
   color: $secondarybtn-color;
-  font-family: $brand-font-family-5;
-  font-weight: bold;
+  font-family: $brand-font-family-8;
+  // font-weight: bold;
 }
 
 .secondarybtn:hover,
@@ -1323,7 +1323,7 @@ ul.active li {
 
 .thirdbtn,
 .thirdbtn:link {
-  color: $white;
+  // color: $white;
   text-decoration: underline;
   background-color: transparent;
 }

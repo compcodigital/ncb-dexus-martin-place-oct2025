@@ -120,8 +120,8 @@
         font-size: 0.8rem;
         letter-spacing: -0.2px;
         text-align: center;
-        font-family: $brand-font-family-5;
-        font-weight: bold;
+        font-family: $brand-font-family-8;
+        // font-weight: bold;
         @include responsive(phone) {
           width: 50px;
           font-size: 10px;

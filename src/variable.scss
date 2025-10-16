@@ -1,20 +1,38 @@
 //variables
 @font-face {
-  font-family: "SofiaProMedium";
-  src: url("/assets/font/OnlineWebFonts_COM_369505745852db57815d36b26ce31eed/Sofia-Pro-Regular/Web-Fonts/060e116a70e3096c52db16f61aaab194.eot");
-  src: url("/assets/font/OnlineWebFonts_COM_369505745852db57815d36b26ce31eed/Sofia-Pro-Regular/Web-Fonts/060e116a70e3096c52db16f61aaab194.eot?#iefix")
+  font-family: "MaisonNeue";
+  src: url("/assets/font/OnlineWebFonts_COM_14289ac0f120e98367c211ccc51a41fd/Maison-Neue/Web-Fonts/2173dceabf0710a335c0bca178efc162.eot");
+  src: url("/assets/font/OnlineWebFonts_COM_14289ac0f120e98367c211ccc51a41fd/Maison-Neue/Web-Fonts/2173dceabf0710a335c0bca178efc162.eot?#iefix")
       format("embedded-opentype"),
-    url("/assets/font/OnlineWebFonts_COM_369505745852db57815d36b26ce31eed/Sofia-Pro-Regular/Web-Fonts/060e116a70e3096c52db16f61aaab194.woff")
+    url("/assets/font/OnlineWebFonts_COM_14289ac0f120e98367c211ccc51a41fd/Maison-Neue/Web-Fonts/2173dceabf0710a335c0bca178efc162.woff")
       format("woff"),
-    url("/assets/font/OnlineWebFonts_COM_369505745852db57815d36b26ce31eed/Sofia-Pro-Regular/Web-Fonts/060e116a70e3096c52db16f61aaab194.woff2")
+    url("/assets/font/OnlineWebFonts_COM_14289ac0f120e98367c211ccc51a41fd/Maison-Neue/Web-Fonts/2173dceabf0710a335c0bca178efc162.woff2")
       format("woff2"),
-    url("/assets/font/OnlineWebFonts_COM_369505745852db57815d36b26ce31eed/Sofia-Pro-Regular/Web-Fonts/060e116a70e3096c52db16f61aaab194.ttf")
+    url("/assets/font/OnlineWebFonts_COM_14289ac0f120e98367c211ccc51a41fd/Maison-Neue/Web-Fonts/2173dceabf0710a335c0bca178efc162.ttf")
       format("truetype"),
-    url("/assets/font/OnlineWebFonts_COM_369505745852db57815d36b26ce31eed/Sofia-Pro-Regular/Web-Fonts/060e116a70e3096c52db16f61aaab194.svg#SofiaProMedium")
+    url("/assets/font/OnlineWebFonts_COM_14289ac0f120e98367c211ccc51a41fd/Maison-Neue/Web-Fonts/2173dceabf0710a335c0bca178efc162.svg#MaisonNeue")
       format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+@font-face {
+  font-family: "MaisonNeueBook";
+  src: url("/assets/font/OnlineWebFonts_COM_6d00a8d42e7f4cb08d1847f079804c39/Maison-Neue-Book/Web-Fonts/fddfccbdb350be1caa5fcdac9958d748.eot");
+  src: url("/assets/font/OnlineWebFonts_COM_6d00a8d42e7f4cb08d1847f079804c39/Maison-Neue-Book/Web-Fonts/fddfccbdb350be1caa5fcdac9958d748.eot?#iefix")
+      format("embedded-opentype"),
+    url("/assets/font/OnlineWebFonts_COM_6d00a8d42e7f4cb08d1847f079804c39/Maison-Neue-Book/Web-Fonts/fddfccbdb350be1caa5fcdac9958d748.woff")
+      format("woff"),
+    url("/assets/font/OnlineWebFonts_COM_6d00a8d42e7f4cb08d1847f079804c39/Maison-Neue-Book/Web-Fonts/fddfccbdb350be1caa5fcdac9958d748.woff2")
+      format("woff2"),
+    url("/assets/font/OnlineWebFonts_COM_6d00a8d42e7f4cb08d1847f079804c39/Maison-Neue-Book/Web-Fonts/fddfccbdb350be1caa5fcdac9958d748.ttf")
+      format("truetype"),
+    url("/assets/font/OnlineWebFonts_COM_6d00a8d42e7f4cb08d1847f079804c39/Maison-Neue-Book/Web-Fonts/fddfccbdb350be1caa5fcdac9958d748.svg#MaisonNeueBook")
+      format("svg");
+  // font-weight: normal;
+  // font-style: normal;
+  // font-display: swap;
 }
 
 // @font-face {
@@ -35,9 +53,9 @@
 //   font-display: swap;
 // }
 
-$brand-color: #23236e; // background home page
+$brand-color: #bee3fe; // background home page
 $brand-color-1: #5471ff; // background other page
-$brand-color-2: #81fabf; // background breadcrumb
+$brand-color-2: #000000; // background breadcrumb
 $brand-color-3: #ffffff; // title color all page
 $brand-color-4: #ffffff; // background input home page
 $brand-color-5: #ffffff; // background input other page
@@ -50,17 +68,18 @@ $brand-color-11: #75d63c;
 $brand-color-12: #6f77b9; // background all page
 
 $error-color: #ff8585;
-$sucess-color: #81fabf;
-$font-color: #ffffff;
+$sucess-color: #80c9ff;
+$font-color: #000000;
 
-$brand-font-family: "SofiaProMedium", sans-serif;
-$brand-font-family-1: "SofiaProMedium", sans-serif;
-$brand-font-family-2: "SofiaProMedium", sans-serif;
-$brand-font-family-3: "SofiaProMedium", sans-serif;
-$brand-font-family-4: "SofiaProMedium", sans-serif;
-$brand-font-family-5: "SofiaProMedium", sans-serif;
-$brand-font-family-6: "SofiaProMedium", sans-serif;
-$brand-font-family-7: "SofiaProMedium", sans-serif;
+$brand-font-family: "MaisonNeue", sans-serif;
+$brand-font-family-1: "MaisonNeue", sans-serif;
+$brand-font-family-2: "MaisonNeue", sans-serif;
+$brand-font-family-3: "MaisonNeue", sans-serif;
+$brand-font-family-4: "MaisonNeue", sans-serif;
+$brand-font-family-5: "MaisonNeue", sans-serif;
+$brand-font-family-6: "MaisonNeue", sans-serif;
+$brand-font-family-7: "MaisonNeue", sans-serif;
+$brand-font-family-8: "MaisonNeueBook", sans-serif;
 
 $white: #ffffff;
 $black: #000000;
@@ -70,14 +89,14 @@ $textalignment: center; //need center|left|right alignment in all places
 $btn_radius: 6px; //0; //52px; //need btn in square use 0|need btn in rounded corner use 52px
 
 $primarybtn: transparent;
-$primarybtn-color: #82fabf;
+$primarybtn-color: #000000;
 $primarybtnop: transparent;
-$primarybtnop-color: #82fabf;
+$primarybtnop-color: #000000;
 
 $secondarybtn: transparent;
-$secondarybtn-color: #82fabf;
+$secondarybtn-color: #000000;
 $secondarybtnop: transparent;
-$secondarybtnop-color: #82fabf;
+$secondarybtnop-color: #000000;
 
 //dot-animation colors
 $dot1: #be6b66;
@@ -95,7 +114,7 @@ $activeimage-2: "/assets/img/status-page-icons/spend-details-active.png";
 $activeimage-3: "/assets/img/status-page-icons/reward-active.png";
 $activeimage-4: "/assets/img/status-page-icons/reward-active.png";
 $status-color: #ffffff;
-$status-active-color: #23236e;
+$status-active-color: #bee3fe;
 
 $desktop: 1200px; //Desktop screen size.
 $pc: 992px; // PC screen size.

@@ -60,14 +60,14 @@ export class CampaignCenterService {
   constructor(private http: HttpClient, private datePipe: DatePipe) {
     this.showFooter = true;
     this.footerSecondary = false;
-    this.companyId = "1670"; // wm_niw_com
+    this.companyId = "1497"; // wm_niw_com
     this.logo = "";
     this.centreName = "";
     this.privacyLink = "";
-    this.campaignId = 5000605;
+    this.campaignId = 5000602;
     this.giftsExhausted = false;
     this.apiAuthKey =
-      "9629F16D6F46A3E22E6DD531758467WERRIBEC528AB8FA05000581qq15102025";
+      "9629F16D6F46A3E22E6DD531758467WERRIBEC528AB8FA05000581MP15102025";
     this.apiUrl =
       "https://www.campaigncentre.com.au/_winme/web/app_dev.php/api/v1.02/ncb/web/";
     this.campaignType = "spentOnly"; // entryOnly || uniqueCode || spentOnly

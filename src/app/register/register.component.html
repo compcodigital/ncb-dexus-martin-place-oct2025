@@ -40,7 +40,7 @@
       </div> -->
       <div class="row">
         <div class="col-12">
-          <div class="plus1 mb-4">Your details</div>
+          <div class="plus1 mb-lg-4">Your details</div>
           <!-- <div class="header-border mb-3"></div> -->
         </div>
       </div>
@@ -58,12 +58,15 @@
               >
                 <!--registerForm.value.email  -->
                 <div class="row mb-3">
-                  <div class="col-12 text-center">
-                    <small>
+                  <div
+                    class="col-12 text-center"
+                    style="max-width: 468px; margin: auto"
+                  >
+                    <small class="fx-small">
                       Gift cards are available to the first 150 successful
                       entrants each day from Monday 20 - Friday 24 and Monday 27
-                      - Friday 31 October 2025.*</small
-                    >
+                      - Friday 31 October 2025.*
+                    </small>
                   </div>
                 </div>
                 <div class="row" *ngIf="errorMsg.message">
@@ -255,7 +258,7 @@
                   >
                     <label class="control-label register-label"
                       >*Mobile:
-                      <small style="color: #81fabf"
+                      <small style="color: #888888"
                         >e -Gift Card will be delivered via SMS.</small
                       ></label
                     >
@@ -797,8 +800,8 @@
                         </div>
                         <div class="text">
                           <span>
-                            Please contact me via email with the latest Quay
-                            Quarter news and offers.
+                            Please contact me via email with the latest 25
+                            Martin Place news and offers.
                           </span>
                         </div>
                       </div>
@@ -873,15 +876,15 @@
                   <div class="col-12">
                     <div class="other-text mt-3 mb-5">
                       Dexus is collecting your personal information for the
-                      purpose of entering you into the Spend $10. Get $10
+                      purpose of entering you into the Gift Card Giveaway
                       competition and, where consented, keeping you informed
-                      about events, activities, or promotions at Quay Quarter.
-                      Dexus will disclose this information to third party agents
-                      and service providers, including Compco Digital, and
-                      Vault, to assist us in the operation of this competition.
-                      Information about how you can access or update your
-                      personal information can be found in the Dexus Privacy
-                      Policy.
+                      about events, activities, or promotions at 25 Martin
+                      Place. Dexus will disclose this information to third party
+                      agents and service providers, including Compco Digital,
+                      and Vault, to assist us in the operation of this
+                      competition. Information about how you can access or
+                      update your personal information can be found in the Dexus
+                      Privacy Policy.
                     </div>
                   </div>
                 </div>
@@ -1058,7 +1061,7 @@
                 [ngClass]="loadingStyle"
               />
               <!-- <span class="loading" [ngClass]="loadingStyle"></span> -->
-              CONFIRM
+              CONFIRM >
               <!-- NEXT -->
             </button>
           </div>
