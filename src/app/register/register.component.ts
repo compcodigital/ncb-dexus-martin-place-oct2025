@@ -889,7 +889,8 @@ export class RegisterComponent implements OnInit {
       if (this.isState) {
         if (this.registerForm.controls.state.status === "INVALID") {
           this.errorMsg.valid = false;
-          this.errorMsg.message += "\nPlease select the State from Dropdown.";
+          this.errorMsg.message +=
+            "\nPlease select your State from the Dropdown list.";
           this.errorMsg.type = "state";
           this.stateStyle = "error-msg";
           qld = true;

@@ -318,7 +318,7 @@
                     <input
                       *ngIf="isMobile"
                       type="date"
-                      class="form-control"
+                      class="form-control purchase-date-input"
                       formControlName="dob"
                       placeholder="dd/mm/yyyy"
                       autocomplete="{{ acc }}"
@@ -428,12 +428,12 @@
                   </div>
 
                   <div
-                    class="col-sm-4 col-4"
+                    class="col-sm-4 col-4 remove-pl"
                     [ngClass]="postcodeStyle"
                     *ngIf="isPostcode"
                   >
                     <label class="control-label register-label"
-                      >*Postcode :</label
+                      >*Postcode:</label
                     >
                     <input
                       type="number"
@@ -860,7 +860,7 @@
                   </div>
                 </div>
 
-                <div class="row my-5">
+                <div class="row my-md-5 my-3">
                   <div class="col-12 textalignment">
                     <button type="submit" class="primarybtn btn1">
                       <img
@@ -874,7 +874,7 @@
                 </div>
                 <div class="row">
                   <div class="col-12">
-                    <div class="other-text mt-3 mb-5">
+                    <div class="other-text mt-md-3 mb-md-5">
                       Dexus is collecting your personal information for the
                       purpose of entering you into the Gift Card Giveaway
                       competition and, where consented, keeping you informed
@@ -883,8 +883,13 @@
                       agents and service providers, including Compco Digital,
                       and Vault, to assist us in the operation of this
                       competition. Information about how you can access or
-                      update your personal information can be found in the Dexus
-                      Privacy Policy.
+                      update your personal information can be found in the
+                      <a
+                        href="https://www.dexus.com/general/privacy-policy.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Dexus Privacy Policy</a
+                      >.
                     </div>
                   </div>
                 </div>

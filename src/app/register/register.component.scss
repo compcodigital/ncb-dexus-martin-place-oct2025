@@ -796,4 +796,36 @@
 
 .fx-small {
   font-family: $brand-font-family-8;
+  @include responsive(phone) {
+    font-size: 11px;
+  }
+}
+
+/* Centrado general para todos los navegadores */
+.purchase-date-input {
+  text-align: center; /* centra el texto */
+  height: 43px; /* respeta la altura que ya usas */
+  line-height: 43px; /* alinea verticalmente */
+  padding: 0; /* quita padding extra */
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Fix para Safari iOS */
+@supports (-webkit-touch-callout: none) {
+  .purchase-date-input {
+    line-height: normal; /* Safari ignora line-height fijo */
+    // padding-top: 10px; /* lo bajas manualmente */
+    // padding-bottom: 10px;
+  }
+
+  .purchase-date-input::-webkit-datetime-edit {
+    text-align: center;
+    margin: auto; /* centra el bloque interno */
+  }
+}
+
+.remove-pl {
+  padding-left: 0;
 }

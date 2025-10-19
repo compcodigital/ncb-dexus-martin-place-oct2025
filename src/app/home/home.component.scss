@@ -206,3 +206,12 @@
     }
   }
 }
+
+.fx-logo {
+  img {
+    max-width: 300px;
+    @include responsive(phone) {
+      max-width: 186px;
+    }
+  }
+}

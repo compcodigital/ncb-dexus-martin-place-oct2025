@@ -1312,6 +1312,9 @@ ul.active li {
   color: $secondarybtn-color;
   font-family: $brand-font-family-8;
   // font-weight: bold;
+  @include responsive(phone) {
+    font-size: 22px !important;
+  }
 }
 
 .secondarybtn:hover,

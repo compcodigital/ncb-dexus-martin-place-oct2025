@@ -206,3 +206,15 @@
   //   }
   // }
 }
+
+.image-3 + .title {
+  @include responsive(phone) {
+    bottom: -25px !important; // sube el texto específico
+  }
+}
+
+.image-1 + .title {
+  @include responsive(phone) {
+    bottom: -25px !important; // sube el texto específico
+  }
+}
