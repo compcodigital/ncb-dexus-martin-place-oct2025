@@ -10,7 +10,7 @@
   .spend-win {
     margin-top: 20px;
     margin-left: 40px;
-    max-width: 150px;
+    max-width: 160px;
     @include responsive(pc) {
       max-width: 100%;
     }
@@ -115,7 +115,7 @@
         position: absolute;
         bottom: -33px;
         left: -57px;
-        width: 164px;
+        width: 154px;
         color: $status-color;
         font-size: 0.8rem;
         letter-spacing: -0.2px;
@@ -123,11 +123,11 @@
         font-family: $brand-font-family-8;
         // font-weight: bold;
         @include responsive(phone) {
-          width: 50px;
+          width: 72px;
           font-size: 10px;
           line-height: 12px;
           bottom: -32px;
-          left: -10px;
+          left: -20px;
         }
       }
 
@@ -141,7 +141,7 @@
       margin: 0 0.4em;
       border: 1px solid $status-color;
       @include responsive(phone) {
-        width: 2em;
+        width: 4em;
       }
     }
   }
@@ -205,16 +205,4 @@
   //     margin-left: 7vh;
   //   }
   // }
-}
-
-.image-3 + .title {
-  @include responsive(phone) {
-    bottom: -25px !important; // sube el texto específico
-  }
-}
-
-.image-1 + .title {
-  @include responsive(phone) {
-    bottom: -25px !important; // sube el texto específico
-  }
 }
