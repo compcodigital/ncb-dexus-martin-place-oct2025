@@ -50,6 +50,8 @@ export class MultipleUniqueCodeComponent implements OnInit, OnDestroy {
   @ViewChild("customError1", { static: false }) customError1: TemplateRef<any>;
   @ViewChild("templateEntryInvalid", { static: false })
   templateEntryInvalid: TemplateRef<any>;
+  @ViewChild("outsideOpenHours", { static: false })
+  outsideOpenHours: TemplateRef<any>;
 
   @ViewChild("dp", { static: false })
   datepicker!: BsDatepickerDirective;
@@ -1069,6 +1071,11 @@ export class MultipleUniqueCodeComponent implements OnInit, OnDestroy {
                 ) {
                   // already entered
                   this.openModal(this.templateAlreadyEntered, "sm");
+                  this.loadingStyle = "displaynone";
+                  this.buttonDisabled = false;
+                } else if (response.error.code === "NCB-0045") {
+                  // outside opening hours
+                  this.openModal(this.outsideOpenHours, "sm");
                   this.loadingStyle = "displaynone";
                   this.buttonDisabled = false;
                 } else {

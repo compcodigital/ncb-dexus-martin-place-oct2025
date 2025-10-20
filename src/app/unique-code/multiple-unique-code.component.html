@@ -967,6 +967,24 @@
       </div>
     </div>
   </ng-template>
+  <ng-template #outsideOpenHours>
+    <div class="modal-header">
+      <button
+        type="button"
+        class="close float-right"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+      >
+        <img src="../../assets/img/close-modal.png" class="modal-close" />
+      </button>
+    </div>
+    <div class="modal-body modal-alert">
+      <!-- <div class="oops">Oops...</div> -->
+      <div class="mt-4">
+        <small>This promotion is open from 9am-5pm Monday to Friday.</small>
+      </div>
+    </div>
+  </ng-template>
 </div>
 
 <!-- <div class="ribbon">
