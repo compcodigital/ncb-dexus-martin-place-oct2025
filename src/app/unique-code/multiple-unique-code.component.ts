@@ -164,7 +164,7 @@ export class MultipleUniqueCodeComponent implements OnInit, OnDestroy {
     this.modalRef = this.modalService.show(template, modalCss);
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.submitted = false;
     this.buttonDisabled = false;
     this.multipleCode = false;
@@ -231,6 +231,7 @@ export class MultipleUniqueCodeComponent implements OnInit, OnDestroy {
     this.initForm();
     this.setArrayInputs(this.arrayInputs);
     // this.localClubList();
+    await this.ensureCentersLoaded();
     this.retailerList(); // use when its a drop down list for retailer (store name)
 
     // if (this.campaignCenterService.companyId) {
@@ -1335,6 +1336,15 @@ export class MultipleUniqueCodeComponent implements OnInit, OnDestroy {
 
   localClubList() {
     this.localClubs = this.campaignCenterService.localClubs;
+  }
+
+  async ensureCentersLoaded(retries: number = 10): Promise<void> {
+    for (let i = 0; i < retries; i++) {
+      const centers = JSON.parse(localStorage.getItem("centers") || "[]");
+      if (centers.length > 0) return;
+      await new Promise((r) => setTimeout(r, 500)); // espera 0.5s
+    }
+    console.warn("⚠️ No se pudo cargar los centers después de varios intentos");
   }
 
   /*drop down list of retailer function*/

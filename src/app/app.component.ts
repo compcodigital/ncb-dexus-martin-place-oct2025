@@ -179,7 +179,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.miscellanious();
     this.softwareUpdate(); // service worker update
     this.campaignSettings(); // will check about the campaign details
-    this.getCenters(); // will check about the center details
+    this.getCenters().then(() => {
+      console.log("✅ Centers list guardada en localStorage correctamente");
+    });
     setInterval(() => {
       this.giftAvail();
     }, 60000);
@@ -486,22 +488,47 @@ export class AppComponent implements OnInit, AfterViewInit {
       // }
     }
   }
-  getCenters() {
-    // to get the center details
-    this.campaignCenterService.getCenters().subscribe((data) => {
-      // console.log(data);
-      if (data) {
-        this.campaignCenterService.centers = this.centers = data.companies;
-        // this.campaignCenterService.centers = this.centers = data.companies;
-        // console.log(this.campaignCenterService.centers);
-        localStorage.setItem(
-          "centers",
-          JSON.stringify(this.campaignCenterService.centers)
-        );
-      }
+  // getCenters() {
+  //   // to get the center details
+  //   this.campaignCenterService.getCenters().subscribe((data) => {
+  //     // console.log(data);
+  //     if (data) {
+  //       this.campaignCenterService.centers = this.centers = data.companies;
+  //       // this.campaignCenterService.centers = this.centers = data.companies;
+  //       // console.log(this.campaignCenterService.centers);
+  //       localStorage.setItem(
+  //         "centers",
+  //         JSON.stringify(this.campaignCenterService.centers)
+  //       );
+  //     }
+  //   });
+  // }
+
+  // ✅ FIX – getCenters devuelve una promesa y maneja localStorage seguro
+  getCenters(): Promise<void> {
+    return new Promise((resolve) => {
+      this.campaignCenterService.getCenters().subscribe(
+        (data) => {
+          if (data && data.companies && data.companies.length) {
+            this.campaignCenterService.centers = this.centers = data.companies;
+            try {
+              localStorage.setItem("centers", JSON.stringify(this.centers));
+            } catch (e) {
+              console.warn("Error guardando centers en localStorage", e);
+            }
+            console.log("Centers cargados:", this.centers.length);
+          } else {
+            console.warn("No se recibieron centros desde la API");
+          }
+          resolve();
+        },
+        (error) => {
+          console.error("Error al cargar centros:", error);
+          resolve();
+        }
+      );
     });
   }
-
   checkIfGiftsHaveBeenExhausted() {
     this.campaignCenterService
       .checkIfGiftsHaveBeenExhausted()
